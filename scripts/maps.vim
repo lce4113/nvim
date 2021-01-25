@@ -43,7 +43,12 @@ nnoremap <CR> o<ESC>
 " Option + shift + n or space + n to make line numbers return to hybrid
 nnoremap ˜ :set relativenumber!<CR>
 nnoremap <LEADER>n :set relativenumber!<CR>
-inoremap ˜ <ESC>:set relativenumber!<CR>i
+inoremap ˜ <ESC>:set relativenumber!<CR>a
+
+" Space + s to resource init.vim
+nnoremap <LEADER>s :source $MYVIMRC<CR>
+nnoremap ß :source $MYVIMRC<CR>
+inoremap ß <ESC>:source $MYVIMRC<CR>a
 
 
 " ––– Code Formatting –––
@@ -75,12 +80,15 @@ autocmd BufRead,BufNewFile *.vim imap ® <ESC><C-b>:w<CR>:source %<CR>:PlugInsta
 
 " ––– Plugin Key Maps –––
 
-" Nerd Tree - Open a directory tree with space + n
+" Nerd Tree - open a directory tree with space + n
 nnoremap <LEADER>t :NERDTreeToggle<CR>
 
 " Goyo - option + g to toggle
 nnoremap © :Goyo<CR>:set number relativenumber<CR>
 inoremap © <ESC>:Goyo<CR>:set number relativenumber<CR>i
+
+" Lazy Git - open GUI with space + l + g
+nnoremap <LEADER>lg :LazyGit<CR>
 
 
 " ––– Auto Commands –––

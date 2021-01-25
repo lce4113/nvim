@@ -37,16 +37,17 @@ Plug 'HerringtonDarkholme/yats.vim'
 Plug 'honza/vim-snippets'
 
 " Git integration
+Plug 'kdheepak/lazygit.nvim', { 'branch': 'nvim-v0.4.3' } " Epic Git GUI
 Plug 'mhinz/vim-signify' " Show changes in file while editing
-Plug 'tpope/vim-fugitive' " Git commands as vim comands
-Plug 'tpope/vim-rhubarb' " Adds GBrowse command to go to Github
-Plug 'junegunn/gv.vim' " Shows changes in files over commits
 
 " Allow nerd fonts
 Plug 'ryanoasis/vim-devicons'
 
 " Comment functions for many languages
 Plug 'preservim/nerdcommenter'
+
+" A floating terminal
+Plug 'voldikss/vim-floaterm'
 
 
 " End Plug statements
