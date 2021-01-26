@@ -8,13 +8,13 @@
 "                              |___/ 
 
 " Theme
-colorscheme gruvbox
-set background=dark
+colorscheme gruvbox " Set colorscheme to gruvbox
+set background=dark " Tell vim what the background color looks like
 
 " Tab configuration
-set tabstop=2 softtabstop=2
-set shiftwidth=2
-set expandtab
+set tabstop=2 softtabstop=2 " Make tab 2 spaces long
+set shiftwidth=2 " Make indentation 2 spaces long
+set expandtab " Convert tabs to spaces
 set whichwrap+=<,>,h,l,[,]
 
 set smartindent
@@ -29,6 +29,7 @@ set undofile
 set incsearch
 set nohlsearch " Remove highlight after last search
 set mouse=a " Allow mouse click to move cursor
+set splitright
 
 " Stop comment continuation to next line
 autocmd FileType * set formatoptions-=cro

@@ -15,11 +15,16 @@ let mapleader = ' '
 " Press 'jk' to go into normal mode
 inoremap jk <C-c>
 
-" Save file with space + w and option + w in normal and insert mode
-nmap <LEADER>w :w<CR><C-b>
-imap ∑ <ESC>:w<CR>i<C-b>
-nmap <LEADER>q :q<CR><C-b>
-imap œ <ESC>:q<CR>i<C-b>
+" Save and quit buffer with space/option + w/q
+nmap <LEADER>w <C-b>:w<CR>
+imap ∑ <ESC><C-b>:w<CR>i
+nmap <LEADER>q :q<CR>
+imap œ <ESC>:q<CR>i
+" Save and quit all buffers with space/option + shift + w/q
+nmap <LEADER>W <C-b>:wa<CR>
+imap „ <ESC><C-b>:wa<CR>i
+nmap <LEADER>Q :qa<CR>
+imap Œ <ESC>:qa<CR>i
 
 " Option + j or k key to move a line down or up in normal and insert mode
 nnoremap ∆ ddp
@@ -74,8 +79,8 @@ autocmd FileType cpp nnoremap <LEADER>r :w<CR>:!g++ % -O2<CR>:!./a.out<CR>
 autocmd FileType cpp inoremap ® <ESC>:w<CR>:!g++ % -O2<CR>:!./a.out<CR>
 
 " Save and execute init.vim with leader + r
-autocmd BufRead,BufNewFile *.vim nmap <LEADER>r <C-b>:w<CR>:source %<CR>:PlugInstall<CR>:q
-autocmd BufRead,BufNewFile *.vim imap ® <ESC><C-b>:w<CR>:source %<CR>:PlugInstall<CR>:q 
+autocmd BufRead,BufNewFile *.vim nmap <LEADER>r <C-b>:w<CR>:source $MYVIMRC<CR>:PlugInstall<CR>:q
+autocmd BufRead,BufNewFile *.vim imap ® <ESC><C-b>:w<CR>:source $MYVIMRC<CR>:PlugInstall<CR>:q 
 
 
 " ––– Plugin Key Maps –––

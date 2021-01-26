@@ -49,6 +49,23 @@ Plug 'preservim/nerdcommenter'
 " A floating terminal
 Plug 'voldikss/vim-floaterm'
 
+" FZF for fuzzy searching
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'airblade/vim-rooter' " Searches through directories
+
+" Codi for inline REPL
+Plug 'metakirby5/codi.vim'
+
+" Tagbar for seeing a file's structure
+Plug 'preservim/tagbar'
+
+" Airline for a cool tabline
+Plug 'vim-airline/vim-airline'
+
+" MRU for reopening closed tabs
+Plug 'yegappan/mru'
+
 
 " End Plug statements
 call plug#end()
