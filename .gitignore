@@ -2,6 +2,7 @@ plugged/
 Icon?
 .DS_Store
 .netrwhist
+a.out
 undodir/
 tags
 fzf-history/
