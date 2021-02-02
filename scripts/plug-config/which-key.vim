@@ -91,7 +91,7 @@ let g:which_key_map['s'] = {
       \ 'b': [ ':Buffers'  , 'Buffers'                      ],
       \ 'c': [ ':Colors'   , 'Color Schemes'                ],
       \ 'C': [ ':Commits'  , 'Commit History'               ],
-      \ 'f': [ ':Files'    , 'Search Files'                 ],
+      \ 'f': [ ':GFiles'    , 'Search Files'                 ],
       \ 'F': [ ':Filetypes', 'Filetype Syntax Highlighting' ],
       \ 'h': [ ':History'  , 'File History'                 ],
       \ 'H': [ ':History:' , 'Command History'              ],
