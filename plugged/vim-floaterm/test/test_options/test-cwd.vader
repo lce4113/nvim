@@ -1,7 +1,0 @@
-" vim:ft=vim
-
-Execute(Set cwd and open a floaterm):
-  " TODO
-
-Execute(Close floaterm and check cwd):
-  " TODO
