@@ -131,4 +131,4 @@ let g:which_key_map['W'] = {
 
 
 " Register which key map
-call which_key#register('<Space>', "g:which_key_map")
+autocmd VimEnter * call which_key#register('<Space>', "g:which_key_map")

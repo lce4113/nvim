@@ -1,0 +1,7 @@
+plugged/
+Icon?
+.DS_Store
+.netrwhist
+undodir/
+tags
+fzf-history/
