@@ -1,11 +1,11 @@
-"  _____  _             _           
-" |  __ \| |           (_)          
-" | |__) | |_   _  __ _ _ _ __  ___ 
+"  _____  _             _
+" |  __ \| |           (_)
+" | |__) | |_   _  __ _ _ _ __  ___
 " |  ___/| | | | |/ _` | | '_ \/ __|
 " | |    | | |_| | (_| | | | | \__ \
 " |_|    |_|\__,_|\__, |_|_| |_|___/
-"                  __/ |            
-"                 |___/             
+"                  __/ |
+"                 |___/
 
 " Begin Plug statements
 call plug#begin('~/.config/nvim/plugged')
@@ -33,8 +33,9 @@ Plug 'maxmellon/vim-jsx-pretty'
 " yats for Typescript syntax highlighting
 Plug 'HerringtonDarkholme/yats.vim'
 
-" Premade snippets for vim
-Plug 'honza/vim-snippets'
+" Snippets
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets' " Premade snippets
 
 " Git integration
 Plug 'kdheepak/lazygit.nvim', { 'branch': 'nvim-v0.4.3' } " Epic Git GUI
@@ -65,6 +66,15 @@ Plug 'vim-airline/vim-airline'
 
 " MRU for reopening closed tabs
 Plug 'yegappan/mru'
+
+" Autoformatting
+Plug 'Chiel92/vim-autoformat'
+
+" Autocomplete brackets
+Plug 'jiangmiao/auto-pairs'
+
+" Vim Which Key for managing key mappings
+Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 
 
 " End Plug statements

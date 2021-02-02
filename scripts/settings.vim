@@ -1,11 +1,11 @@
-"   _____      _   _   _                 
-"  / ____|    | | | | (_)                
-" | (___   ___| |_| |_ _ _ __   __ _ ___ 
+"   _____      _   _   _
+"  / ____|    | | | | (_)
+" | (___   ___| |_| |_ _ _ __   __ _ ___
 "  \___ \ / _ \ __| __| | '_ \ / _` / __|
 "  ____) |  __/ |_| |_| | | | | (_| \__ \
 " |_____/ \___|\__|\__|_|_| |_|\__, |___/
-"                               __/ |    
-"                              |___/ 
+"                               __/ |
+"                              |___/
 
 " Theme
 colorscheme gruvbox " Set colorscheme to gruvbox
@@ -34,9 +34,8 @@ set splitright
 " Stop comment continuation to next line
 autocmd FileType * set formatoptions-=cro
 
-" Column for line length limit
-set colorcolumn=110
-highlight ColorColumn ctermbg=0 guibg=lightgrey
+" Remove color column for line length limit
+set colorcolumn=
 
 " Cursor shape
 set guicursor=n:block-blinkwait300-blinkon200-blinkoff150

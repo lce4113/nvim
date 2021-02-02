@@ -33,12 +33,21 @@ function! floaterm#util#show_msg(message, ...) abort
   endif
 endfunction
 
-function! floaterm#util#edit(_bufnr, filename) abort
+" >>> floaterm test.txt
+function! floaterm#util#edit_by_floaterm(_bufnr, filename) abort
   call floaterm#hide(1, 0, '')
   silent execute g:floaterm_open_command . ' ' . a:filename
 endfunction
 
+" >>> $EDITOR test.txt
+function! floaterm#util#edit_by_editor(bufnr, filename) abort
+  call floaterm#edita#vim#editor#open(a:filename, a:bufnr)
+endfunction
+
 function! floaterm#util#startinsert() abort
+  if &ft != 'floaterm'
+    return
+  endif
   if !g:floaterm_autoinsert 
     call feedkeys("\<C-\>\<C-n>", 'n')
   elseif mode() != 'i'
@@ -48,27 +57,6 @@ function! floaterm#util#startinsert() abort
       silent! execute 'normal! i'
     endif
   endif
-endfunction
-
-function! floaterm#util#autohide() abort
-  " hide all floaterms before opening a new floaterm
-  if g:floaterm_autohide
-    call floaterm#hide(1, 0, '')
-  endif
-endfunction
-
-function! floaterm#util#getbuflines(bufnr, length) abort
-  let lines = []
-  if a:bufnr == -1
-    for bufnr in floaterm#buflist#gather()
-      let lnum = getbufinfo(bufnr)[0]['lnum']
-      let lines += getbufline(bufnr, max([lnum - a:length, 0]), '$')
-    endfor
-  else
-    let lnum = getbufinfo(a:bufnr)[0]['lnum']
-    let lines += getbufline(a:bufnr, max([lnum - a:length, 0]), '$')
-  endif
-  return lines
 endfunction
 
 function! floaterm#util#get_selected_text(visualmode, range, line1, line2) abort

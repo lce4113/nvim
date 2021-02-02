@@ -1,1 +1,8 @@
-./plugged/**/*
+plugged/
+.gitignore
+Icon?
+.DS_Store
+.netrwhist
+undodir/
+a.out
+autoload/

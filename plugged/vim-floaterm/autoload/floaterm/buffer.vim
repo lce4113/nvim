@@ -24,7 +24,6 @@ function! floaterm#buffer#create_border_buf(options) abort
   let repeat_width = a:options.width - 2
   let repeat_height = a:options.height - 2
   let title = a:options.title
-  let title = empty(title) ? title : (' ' . title . ' ')
   let title_width = strdisplaywidth(title)
   let borderchars = a:options.borderchars
   let [c_top, c_right, c_bottom, c_left, c_topleft, c_topright, c_botright, c_botleft] = borderchars
@@ -32,6 +31,20 @@ function! floaterm#buffer#create_border_buf(options) abort
   let content += repeat([c_left . repeat(' ', repeat_width) . c_right], repeat_height)
   let content += [c_botleft . repeat(c_bottom, repeat_width) . c_botright]
   return floaterm#buffer#create_scratch_buf(content)
+endfunction
+
+function! floaterm#buffer#getlines(bufnr, length) abort
+  let lines = []
+  if a:bufnr == -1
+    for bufnr in floaterm#buflist#gather()
+      let lnum = getbufinfo(bufnr)[0]['lnum']
+      let lines += getbufline(bufnr, max([lnum - a:length, 0]), '$')
+    endfor
+  else
+    let lnum = getbufinfo(a:bufnr)[0]['lnum']
+    let lines += getbufline(a:bufnr, max([lnum - a:length, 0]), '$')
+  endif
+  return lines
 endfunction
 
 function! floaterm#buffer#get_config(bufnr, key, ...) abort

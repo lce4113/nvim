@@ -1,13 +1,12 @@
 " vim:ft=vim
 
-Execute(test-FloatermKill):
-  function! IsBufValid(bufnr) abort
-    return bufexists(a:bufnr) && floaterm#terminal#jobexists(a:bufnr)
-  endfunction
+Execute(Include base):
+  source test/base_vader.vim
 
+Execute(test-FloatermKill):
   Log '# FloatermKill'
     FloatermNew
-    AssertEqual 'floaterm', &filetype
+    Assert IsInFloatermBuffer()
     FloatermKill
     AssertEqual '', &filetype
 

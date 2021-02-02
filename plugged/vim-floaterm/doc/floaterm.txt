@@ -5,7 +5,7 @@ License: MIT license
 NOTE: This doc may be outdated, please refer to the README file instead,
     https://github.com/voldikss/vim-floaterm/blob/master/README.md
     or
-    ../README.md
+    ../README.md(put the cursor on this and type `gf`)
 ==============================================================================
 
 CONTENTS                                         *floaterm-contents*
@@ -18,6 +18,7 @@ Extensions                                       |floaterm-extensions|
 Integrations                                     |floaterm-integrations|
 FAQ                                              |floaterm-faq|
 Repository                                       |floaterm-repository|
+
 ==============================================================================
 INTRODUCTION                                     *floaterm-introduction*
 
@@ -32,6 +33,7 @@ Use (neo)vim terminal in the floating/popup window.
 - Integrate with other external command-line tools(ranger, lf, fzf, etc.)
 - Autocompletion from within floaterms(require |coc.nvim|)
 - Use as a custom task runner for |asynctasks.vim|
+
 ==============================================================================
 OPTIONS                                          *floaterm-options*
 
@@ -48,8 +50,8 @@ g:floaterm_title                                 *g:floaterm_title*
 
 g:floaterm_wintype                               *g:floaterm_wintype*
     Type |String|.
-    'float'(nvim's floatwin or vim's popupwin) by default. Set it to 'normal'
-    if your vim/nvim doesn't support |api-floatwin| or |popup-window|.
+    'float'(nvim's floatwin or vim's popupwin) by default. Set it to
+    'split' or 'vsplit'if you don't want to use floating or popup window. 
 
 g:floaterm_width                                 *g:floaterm_width*
     Type: |Number| (number of columns) or |Float| (between 0 and 1).
@@ -64,11 +66,17 @@ g:floaterm_height                                *g:floaterm_height*
 g:floaterm_position                              *g:floaterm_position*
 	Type |String|.
 	The position of the floaterm window.
-	If |g:floaterm_wintype| is 'normal', the value can be 'top', 'right',
-	'bottom', 'left'. Default value is 'bottom'.
-    If |g:floaterm_wintype| is 'popup', the value can be 'top', 'right', 'bottom',
-    'left', 'center', 'topleft', 'topright', 'bottomleft', 'bottomright',
-    'auto'(at the cursor place). Default value is 'center'.
+    If |g:floaterm_wintype| is 'split' or 'vsplit': 'leftabove', 'aboveleft',
+    'rightbelow', 'belowright', 'topleft', 'botright'.
+    Default: 'botright'.
+    It's recommended to have a look at those options meanings, e.g.
+>
+        `:help :leftabove`.
+<
+    If |g:floaterm_wintype| is 'float': 'top', 'bottom', 'left', 'right',
+    'topleft', 'topright', 'bottomleft', 'bottomright', 'center', 'auto'(at the
+    cursor place).
+    Default: 'center'
 
 g:floaterm_borderchars                           *g:floaterm_borderchars*
 	Type |String|.
@@ -78,7 +86,7 @@ g:floaterm_borderchars                           *g:floaterm_borderchars*
 
 g:floaterm_rootmarkers                           *g:floaterm_rootmarkers*
     Type |List| of |String|.
-    Markers used to detect the project root directory when running 
+    Markers used to detect the project root directory when running
     >
         :FloatermNew --cwd=<root>
 <
@@ -92,30 +100,32 @@ g:floaterm_open_command                          *g:floaterm_open_command*
 
 g:floaterm_gitcommit                             *g:floaterm_gitcommit*
 	Type |String|.
-	Opening strategy for `COMMIT_EDITMSG` window by running `git commit` in
-	the floaterm window. Only works in neovim. The value can be
-	'floaterm'(open gitcommit in the floaterm window), 'split'(recommended),
-	'vsplit', 'tabe'.
-	Default value is '', which means this feature is disabled by default(use
-	your own `$GIT_EDITOR`).
+    Opening strategy for gitcommit window when running `git commit`.
+    Available: 'split'(recommended), 'vsplit', 'tabe', etc.
+    Default: 'vsplit'. Set to `''` to disable this feature (use your own
+    `$GIT_EDITOR`).
 
 g:floaterm_autoclose                             *g:floaterm_autoclose*
 	Type |Number|.
 	Whether to close floaterm window once a job gets finished.
-	0 - Always do NOT close floaterm window.
-	1 - Close window only if the job exits normally
-	2 - Always close floaterm window.
+        0 - Always do NOT close floaterm window.
+        1 - Close window only if the job exits normally
+        2 - Always close floaterm window.
 	Default value is 0.
+
+g:floaterm_autohide                              *g:floaterm_autohide*
+	Type |Number|.
+    Whether to hide previous floaterms before switching to or opening a another
+    one.
+        0 - Always do NOT hide previous floaterm windows
+        1 - Only hide those whose position (`b:floaterm_position`) is identical to
+            that of the floaterm which will be opened
+        2 - Always hide them
+	Default value is 1.
 
 g:floaterm_autoinsert                            *g:floaterm_autoinsert*
 	Type |Boolean|.
 	Whether to enter |Terminal-mode| after opening a floaterm.
-	Default value is |v:true|.
-
-g:floaterm_autohide                              *g:floaterm_autohide*
-	Type |Boolean|.
-	Decide whether to hide previous floaterms before switching to or opening
-	another one.
 	Default value is |v:true|.
 
 g:floaterm_complete_options                      *g:floaterm_complete_options*
@@ -315,48 +325,9 @@ Install voldikss/leaderf-floaterm and run:
 ------------------------------------------------------------------------------
 ASYNCTASKS.VIM                                   *asynctasks.vim*
 
-This plugin can be a runner for |asynctasks.vim|. To use it, copy the
-following code to your `vimrc` set |g:asynctasks_term_pos| to `'floaterm'` or
-add a `pos=floaterm` filed in your asynctasks configuration files.
- >
-    function! s:run_in_floaterm(opts)
-        execute 'FloatermNew --position=bottomright' .
-                        \ ' --wintype=float' .
-                        \ ' --height=0.4' .
-                        \ ' --width=0.4' .
-                        \ ' --title=floaterm_runner' .
-                        \ ' --autoclose=0' .
-                        \ ' --silent=' . get(a:opts, 'silent', 0)
-                        \ ' --cwd=' . a:opts.cwd
-                        \ ' ' . a:opts.cmd
-        " Do not focus on floaterm window, and close it once cursor moves
-        " If you want to jump to the floaterm window, use <C-w>p
-        " You can choose whether to use the following code or not
-        stopinsert | noa wincmd p
-        augroup close-floaterm-runner
-            autocmd!
-            autocmd CursorMoved,InsertEnter * ++nested
-                \ call timer_start(100, { -> s:close_floaterm_runner() })
-        augroup END
-    endfunction
-    function! s:close_floaterm_runner() abort
-        if &ft == 'floaterm' | return | endif
-        for b in tabpagebuflist()
-            if getbufvar(b, '&ft') == 'floaterm' &&
-                \ getbufvar(b, 'floaterm_jobexists') == v:false
-            execute b 'bwipeout!'
-            break
-            endif
-        endfor
-        autocmd! close-floaterm-runner
-    endfunction
-    let g:asyncrun_runner = get(g:, 'asyncrun_runner', {})
-    let g:asyncrun_runner.floaterm = function('s:run_in_floaterm')
-    let g:asynctasks_term_pos = 'floaterm'
-    <
-Then your task will be ran in the floaterm instance. See
-https://github.com/skywind3000/asynctasks.vim/wiki/Customize-Runner for more
-information.
+This plugin can be a runner for |asynctasks.vim| or |asyncrun.vim|. See
+[|asyncrun.extra|](https://github.com/skywind3000/asyncrun.extra) for the
+installation and usage.
 
 ==============================================================================
 INTEGRATIONS                                     *floaterm-integrations*

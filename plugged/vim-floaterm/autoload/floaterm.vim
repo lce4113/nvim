@@ -24,15 +24,7 @@ if stridx($PATH, s:script) < 0
 endif
 
 if !empty(g:floaterm_gitcommit)
-  autocmd FileType gitcommit,gitrebase,gitconfig set bufhidden=delete
-  if g:floaterm_gitcommit == 'floaterm'
-    let $GIT_EDITOR = 'nvr --remote-wait'
-  else
-    let $GIT_EDITOR = printf(
-      \ 'nvr -cc "call floaterm#hide(1, 0, \"\") | %s" --remote-wait',
-      \ g:floaterm_gitcommit
-      \ )
-  endif
+  call floaterm#edita#setup#enable()
 endif
 
 " ----------------------------------------------------------------------------
@@ -51,7 +43,6 @@ endfunction
 " create a floaterm. return bufnr of the terminal
 " argument `jobopts` is passed by user in the case using this function as API
 function! floaterm#new(bang, cmd, jobopts, config) abort
-  call floaterm#util#autohide()
   if a:cmd != ''
     let wrappers_path = globpath(&runtimepath, 'autoload/floaterm/wrapper/*vim', 0, 1)
     let wrappers = map(wrappers_path, "substitute(fnamemodify(v:val, ':t'), '\\..\\{-}$', '', '')")
@@ -84,13 +75,14 @@ function! floaterm#toggle(bang, bufnr, name)  abort
   if a:bang
     let found_winnr = floaterm#window#find()
     if found_winnr > 0
-      for bufnr in floaterm#buflist#gather()
-        call floaterm#window#hide(bufnr)
-      endfor
+      call floaterm#hide(1, 0, '')
     else
-      for bufnr in floaterm#buflist#gather()
-        call floaterm#terminal#open_existing(bufnr)
-      endfor
+      let buffers = floaterm#buflist#gather()
+      if empty(buffers)
+        let curr_bufnr = floaterm#new(v:true, '', {}, {})
+      else
+        call floaterm#show(1, 0, '')
+      endif
     endif
     return
   endif
@@ -108,7 +100,7 @@ function! floaterm#toggle(bang, bufnr, name)  abort
     else
       let found_winnr = floaterm#window#find()
       if found_winnr > 0
-        noautocmd execute found_winnr . 'wincmd w'
+        execute found_winnr . 'wincmd w'
       else
         call floaterm#curr()
       endif
@@ -117,7 +109,7 @@ function! floaterm#toggle(bang, bufnr, name)  abort
     if bufnr == bufnr('%')
       call floaterm#window#hide(bufnr)
     elseif bufwinnr(bufnr) > -1
-      noautocmd execute bufwinnr(bufnr) . 'wincmd w'
+      execute bufwinnr(bufnr) . 'wincmd w'
     else
       call floaterm#terminal#open_existing(bufnr)
     endif
@@ -147,7 +139,6 @@ function! floaterm#next()  abort
     let msg = 'No more floaterms'
     call floaterm#util#show_msg(msg, 'warning')
   else
-    call floaterm#util#autohide()
     call floaterm#terminal#open_existing(next_bufnr)
   endif
 endfunction
@@ -158,7 +149,6 @@ function! floaterm#prev()  abort
     let msg = 'No more floaterms'
     call floaterm#util#show_msg(msg, 'warning')
   else
-    call floaterm#util#autohide()
     call floaterm#terminal#open_existing(prev_bufnr)
   endif
 endfunction
@@ -178,7 +168,6 @@ function! floaterm#first() abort
   if first_bufnr == -1
     call floaterm#util#show_msg('No more floaterms', 'warning')
   else
-    call floaterm#util#autohide()
     call floaterm#terminal#open_existing(first_bufnr)
   endif
 endfunction
@@ -188,7 +177,6 @@ function! floaterm#last() abort
   if last_bufnr == -1
     call floaterm#util#show_msg('No more floaterms', 'warning')
   else
-    call floaterm#util#autohide()
     call floaterm#terminal#open_existing(last_bufnr)
   endif
 endfunction
@@ -218,6 +206,7 @@ endfunction
 
 function! floaterm#show(bang, bufnr, name) abort
   if a:bang
+    call floaterm#hide(1, 0, '')
     for bufnr in floaterm#buflist#gather()
       call floaterm#terminal#open_existing(bufnr)
     endfor
@@ -233,7 +222,6 @@ function! floaterm#show(bang, bufnr, name) abort
   endif
 
   if bufnr > 0
-    call floaterm#util#autohide()
     call floaterm#terminal#open_existing(bufnr)
   else
     call floaterm#util#show_msg('No floaterms with the bufnr or name', 'error')

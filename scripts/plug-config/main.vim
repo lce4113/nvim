@@ -1,28 +1,28 @@
-"   _____             __ _       
-"  / ____|           / _(_)      
-" | |     ___  _ __ | |_ _  __ _ 
+"   _____             __ _
+"  / ____|           / _(_)
+" | |     ___  _ __ | |_ _  __ _
 " | |    / _ \| '_ \|  _| |/ _` |
 " | |___| (_) | | | | | | | (_| |
 "  \_____\___/|_| |_|_| |_|\__, |
 "                           __/ |
-"                          |___/ 
+"                          |___/
 
 " ––– Syntastic –––
 
-" Make location list update without :Errors command
+" make location list update without :errors command
 let g:syntastic_always_populate_loc_list = 1
 
 
 " ––– Nerd Commenter –––
 
-" Add spaces after comment delimiters by default
-let g:NERDSpaceDelims = 10
+" add spaces after comment delimiters by default
+let g:nerdspacedelims = 10
 
-" Enable trimming of trailing whitespace when uncommenting
-let g:NERDTrimTrailingWhitespace = 1
+" enable trimming of trailing whitespace when uncommenting
+let g:nerdtrimtrailingwhitespace = 1
 
-" Enable NERDCommenterToggle to check all selected lines is commented or not 
-let g:NERDToggleCheckAllLines = 1
+" enable nerdcommentertoggle to check all selected lines is commented or not
+let g:nerdtogglecheckalllines = 1
 
 
 " ––– Floaterm –––
@@ -51,20 +51,40 @@ source ~/.config/nvim/scripts/plug-config/fzf.vim
 
 " ––– Airline –––
 
-" enable tabline
+" Enable tabline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ''
 let g:airline#extensions#tabline#left_alt_sep = ''
 let g:airline#extensions#tabline#right_sep = ''
 let g:airline#extensions#tabline#right_alt_sep = ''
 
-" enable powerline fonts
+" Enable powerline fonts
 let g:airline_powerline_fonts = 1
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 
 " Switch to your current theme
-let g:airline_theme = 'onedark'
+let g:airline_theme = 'gruvbox'
 
 " Always show tabs
 set showtabline=2
+
+
+" ––– Ultisnips –––
+
+" set ultisnips triggers
+let g:UltiSnipsJumpForwardTrigger="<TAB>"
+let g:UltiSnipsJumpBackwardTrigger="<S-TAB>"
+
+
+" ––– Auto Pairs –––
+
+" Allow fly mode (move to closing bracket)
+let g:AutoPairsShortcutToggle='π'
+let g:AutoPairsShortcutFastWrap='´'
+let g:AutoPairsShortcutJump='µ'
+
+
+" ––– Which Key –––
+
+source ~/.config/nvim/scripts/plug-config/which-key.vim
