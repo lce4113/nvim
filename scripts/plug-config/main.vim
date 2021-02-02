@@ -88,3 +88,12 @@ let g:AutoPairsShortcutJump='µ'
 " ––– Which Key –––
 
 source ~/.config/nvim/scripts/plug-config/which-key.vim
+
+
+" ––– Quickscope –––
+
+" Trigger a highlight in the appropriate direction when pressing these keys:
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+
+let g:qs_max_chars=150
+

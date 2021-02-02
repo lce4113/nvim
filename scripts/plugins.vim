@@ -76,6 +76,9 @@ Plug 'jiangmiao/auto-pairs'
 " Vim Which Key for managing key mappings
 Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 
+" Quickscope for highlighting letters in inline finding
+Plug 'unblevable/quick-scope'
+
 
 " End Plug statements
 call plug#end()
