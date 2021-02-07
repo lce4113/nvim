@@ -9,5 +9,9 @@ inoremap $1 <ESC>:$2<CR>i
 endsnippet
 
 snippet nmap "Map something using the leader key in normal mode" b
-nnoremap <LEADER>$1 $2
+nnoremap <LEADER>$1 $0
+endsnippet
+
+snippet xmap "Map something using the leader key in visual mode" b
+xnoremap <LEADER>$1 $0
 endsnippet

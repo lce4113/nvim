@@ -79,6 +79,12 @@ Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 " Quickscope for highlighting letters in inline finding
 Plug 'unblevable/quick-scope'
 
+" Vim Easy Align for fancy alignment
+Plug 'junegunn/vim-easy-align'
+
+" Vim Surround for epic surrounding stuff
+Plug 'tpope/vim-surround'
+
 
 " End Plug statements
 call plug#end()

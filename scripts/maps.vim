@@ -42,8 +42,8 @@ nnoremap <LEADER>A li <ESC>r
 
 " ––– Code Formatting –––
 
-nnoremap <C-b> :Autoformat<CR>
-inoremap <C-b> <ESC>:Autoformat<CR>i
+nnoremap <C-b> <SILENT>:Autoformat<CR>
+inoremap <C-b> <SILENT><ESC>:Autoformat<CR>i
 
 
 " ––– Run Code –––
@@ -53,9 +53,8 @@ autocmd FileType cpp nnoremap <LEADER>r <C-b>:w<CR>:!g++ "%" -O2 && ./a.out<CR>
 autocmd FileType cpp inoremap ® <ESC><C-b>:w<CR>:!g++ "%" -O2 && ./a.out<CR>
 
 " Save and execute init.vim with leader + r
-autocmd BufRead,BufNewFile *.vim nmap <LEADER>r <C-b>:w<CR>:source $MYVIMRC<CR>:PlugUpdate<CR>:q
-autocmd BufRead,BufNewFile *.vim imap ® <ESC><C-b>:w<CR>:source $MYVIMRC<CR>:PlugUpdate<CR>:q
-
+autocmd BufRead,BufNewFile *.vim nmap <LEADER>r <C-b>:w<CR>:source $MYVIMRC<CR>:PlugInstall<CR>:q
+autocmd BufRead,BufNewFile *.vim imap ® <ESC><C-b>:w<CR>:source $MYVIMRC<CR>:PlugInstall<CR>:q
 
 " ––– Auto Commands –––
 

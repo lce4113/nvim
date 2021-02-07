@@ -97,3 +97,19 @@ let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
 let g:qs_max_chars=150
 
+
+" ––– Vim Easy Align –––
+
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+
+" Start Live Easy Align with oa in visual and normal mode
+nmap <LEADER>oa <Plug>(LiveEasyAlign)
+xmap <LEADER>oa <Plug>(LiveEasyAlign)
+
+" Format which-key.vim dictionary
+nmap <LEADER>oA vi{:EasyAlign*/[,\]]/l0is<CR>
+xmap <LEADER>oA vi{:EasyAlign*/[,\]]/l0is<CR>
