@@ -1,0 +1,1 @@
+nnoremap <silent> <Space> :call VSCodeNotify('whichkey.show')<CR>

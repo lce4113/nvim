@@ -1,18 +1,21 @@
 " Map leader to which_key
-nnoremap <silent> <leader> :silent WhichKey '<Space>'<CR>
-vnoremap <silent> <leader> :silent <c-u> :silent WhichKeyVisual '<Space>'<CR>
+nnoremap <LEADER> :silent WhichKey '<SPACE>'<CR>
+vnoremap <LEADER> :silent<C-u> :silent WhichKeyVisual '<SPACE>'<CR>
+nnoremap m :silent WhichKey 'm'<CR>
+vnoremap m :silent<C-u> :silent WhichKeyVisual 'm'<CR>
 
-" Create map to add keys to
+" Create maps to add keys to
 let g:which_key_map =  {}
 " Define a separator
 let g:which_key_sep = '→'
-" Time until the menu appears
-set timeoutlen=250
-
 " Not a fan of floating windows for this
 let g:which_key_use_floating_win = 0
 " Reload map every time popup opens
 let g:which_key_run_map_on_popup = 1
+" Minimum horizontal space between columns
+let g:which_key_hspace = 3
+" Time until the menu appears
+set timeoutlen=250
 
 " Change the colors if you want
 highlight default link WhichKey          Operator
@@ -22,44 +25,42 @@ highlight default link WhichKeyDesc      Function
 
 " Hide status line
 autocmd! FileType which_key
-autocmd  FileType which_key set laststatus=0 noshowmode noruler
-      \| autocmd BufLeave <buffer> set laststatus=2 noshowmode ruler
+autocmd FileType which_key set laststatus=0 noshowmode noruler
+autocmd BufLeave <buffer> set laststatus=2 noshowmode ruler
 
 " Top level mappings
 let g:which_key_map = {
-      \ '/': [ '<Plug>NERDCommenterToggle'        , 'Toggle Comment'            ] ,
-      \ 'a': {
-      \    'name':'+AllBuffers'                   ,
-      \    'w': [ ':wa'                           , 'Save All Buffers'          ] ,
-      \    'q': [ ':qa'                           , 'COC Snippets'              ] ,
-      \    'Q': [ ':qa!'                          , 'Force Quit All Buffers'    ]
-      \ }                                         ,
-      \ 'A':'Append Character'                    ,
-      \ 'c': {
+      \ '.': [ ':tabe $MYVIMRC'                   , 'Open $MYVIMRC'               ] ,
+      \ '/': [ ':Commentary'                      , 'Toggle Comment'              ] ,
+      \ ']': [ '<C-]>'                            , 'Jump To Section In Help File'] ,
+      \ 'a':'Append Character'                    ,
+      \ 'c': [ ':Commentary'                      , 'Toggle Comment'              ] ,
+      \ 'C': {
       \    'name':'+COC'                          ,
-      \    'm': [ ':CocList marketplace'          , 'COC Marketplace'           ] ,
-      \    's': [ ':CocList snippets'             , 'COC Snippets'              ] ,
-      \    'c': [ ':CocList commands'             , 'COC Commands'              ]
+      \    'm': [ ':CocList marketplace'          , 'COC Marketplace'             ] ,
+      \    's': [ ':CocList snippets'             , 'COC Snippets'                ] ,
+      \    'c': [ ':CocList commands'             , 'COC Commands'                ]
       \ }                                         ,
-      \ 'd': [ ':q'                               , 'Delete/Quit Buffer'        ] ,
-      \ 'f': [ ':Autoformat'                      , 'Format Buffer'             ] ,
+      \ 'd': [ ':q'                               , 'Delete/Quit Buffer'          ] ,
+      \ 'D': [ ':q!'                              , 'Force Quit Buffer'           ] ,
+      \ 'f': [ ':Autoformat'                      , 'Format Buffer'               ] ,
       \ 'g':'+Git'                                ,
       \ 'i':'Insert Character'                    ,
-      \ 'm': [ ':MRU'                             , 'File History (MRU)'        ] ,
-      \ 'n': [ ':set relativenumber!'             , 'Toggle Hybrid Line Numbers'] ,
-      \ 'N': [ ':set number!'                     , 'Toggle Line Numbers'       ] ,
+      \ 'm': [ ':MRU'                             , 'File History (MRU)'          ] ,
+      \ 'n': [ ':set relativenumber!'             , 'Toggle Hybrid Line Numbers'  ] ,
+      \ 'N': [ ':set number!'                     , 'Toggle Line Numbers'         ] ,
       \ 'o':'+Other'                              ,
       \ 'p':'+Plug'                               ,
-      \ 'q': [ ':q'                               , 'Delete/Quit Buffer'        ] ,
-      \ 'Q': [ ':q!'                              , 'Force Quit Buffer'         ] ,
+      \ 'q': [ ':q'                               , 'Delete/Quit Buffer'          ] ,
+      \ 'Q': [ ':qa'                              , 'Quit All Buffers'            ] ,
       \ 'r':'Run File'                            ,
+      \ 'R': [ ':RnvimrToggle'                    , 'Open Vim Ranger'             ] ,
       \ 's':'+Search'                             ,
-      \ 'S': [ ':source $MYVIMRC'                 , 'Reload MYVIMRC'            ] ,
       \ 't':'+Tabs'                               ,
-      \ 'T': [ ':NERDTreeToggle'                  , 'File Tree'                 ] ,
-      \ 'w': [ ':Autoformat | w'                  , 'Save File'                 ] ,
-      \ 'W':'+Windows'                            ,
-      \ 'z': [ ':Goyo | set number relativenumber', 'Zen Mode (Goyo)'           ]
+      \ 'T': [ ':NERDTreeToggle'                  , 'File Tree'                   ] ,
+      \ 'w': [ ':Autoformat | w'                  , 'Save File'                   ] ,
+      \ 'W': [ ':wa'                              , 'Save All Buffers'            ] ,
+      \ 'z': [ ':Goyo | set number relativenumber', 'Zen Mode (Goyo)'             ]
       \ }
 
 " Git commands
@@ -70,9 +71,44 @@ let g:which_key_map['g'] = {
 
 " Other commands
 let g:which_key_map['o'] = {
-      \ 'name':'+Other'       ,
-      \ 't': [ ':TagbarToggle', 'Toggle Tagbar'] ,
-      \ 'a': '(Live) Easy Align'
+      \ 'name':'+Other'                       ,
+      \ 'a': '(Live) Easy Align'              ,
+      \ 'A': 'Format Vim Which Key Dictionary',
+      \ 'd': [ ':qa'                          , 'Quit All Buffers'             ] ,
+      \ 'o': [ '<C-w>gf'                      , 'Open File In New Tab'         ] ,
+      \ 'q': [ ':q!'                          , 'Force Quit Buffer'            ] ,
+      \ 'Q': [ ':qa!'                         , 'Force Quit All Buffers'       ] ,
+      \ 'r': 'Search And Replace'             ,
+      \ 's': [ ':source $MYVIMRC'             , 'Reload MYVIMRC'               ] ,
+      \ 'S': '+Startify'                      ,
+      \ 't': [ ':TagbarToggle'                , 'Toggle Tagbar'                ] ,
+      \ 'T': [ ':set termguicolors!'          , 'Toggle "termguicolors" Option'] ,
+      \ 'w':'+Windows'
+      \ }
+
+" Window commands
+let g:which_key_map['o']['S'] = {
+      \ 'name':'+Startify',
+      \ 'l': [ ':SLoad'   , 'Load Session'  ] ,
+      \ 's': [ ':SSave'   , 'Save Session'  ] ,
+      \ 'd': [ ':SDelete' , 'Delete Session'] ,
+      \ 'c': [ ':SClose'  , 'Close Session' ]
+      \ }
+
+" Window commands
+let g:which_key_map['o']['w'] = {
+      \ 'name':'+Windows',
+      \ '=': [ '<C-w>='  , 'Equalize Window Height'] ,
+      \ 'b': [ ':split'  , 'Duplicate Below'       ] ,
+      \ 'h': [ '<C-w>h'  , 'Go Left A Window'      ] ,
+      \ 'j': [ '<C-w>j'  , 'Go Down A Window'      ] ,
+      \ 'k': [ '<C-w>k'  , 'Go Up A Window'        ] ,
+      \ 'l': [ '<C-w>l'  , 'Go Right A Window'     ] ,
+      \ 'o': [ '<C-w>+'  , 'Increase Height (+2)'  ] ,
+      \ 'r': [ ':vsplit' , 'Duplicate Right'       ] ,
+      \ 's': [ ':Windows', 'Search Windows'        ] ,
+      \ 't': [ '<C-w>T'  , 'Open Windows In Tabs'  ] ,
+      \ 'u': [ '<C-w>-'  , 'Decrease Height (-2)'  ]
       \ }
 
 " Vim Plug commands
@@ -107,30 +143,16 @@ let g:which_key_map['s'] = {
 
 " Tab commands
 let g:which_key_map['t'] = {
-      \ 'name':                  '+Tabs',
-      \ '.': [ ':tabe $MYVIMRC'         , 'Open $MYVIMRC'     ] ,
-      \ 'd': [ ':tabe %'                , 'Duplicate Tab'     ] ,
-      \ 'n': [ ':tabnext'               , 'Go To Next Tab'    ] ,
-      \ 'p': [ ':tabnext'               , 'Go To Previous Tab'] ,
-      \ 't': [ ':tabe #'                , 'Open Last Tab'     ]
+      \ 'name':'+Tabs'         ,
+      \ '.': [ ':tabe $MYVIMRC', 'Open $MYVIMRC'     ] ,
+      \ 'd': [ ':tabe %'       , 'Duplicate Tab'     ] ,
+      \ 'h': [ ':tabm -1'      , 'Move Tab Left'     ] ,
+      \ 'l': [ ':tabm +1'      , 'Move Tab Right'    ] ,
+      \ 'n': [ ':tabnext'      , 'Go To Next Tab'    ] ,
+      \ 'p': [ ':tabnext'      , 'Go To Previous Tab'] ,
+      \ 't': [ ':tabe #'       , 'Open Last Tab'     ]
       \ }
-
-" Window commands
-let g:which_key_map['W'] = {
-      \ 'name':            '+Windows',
-      \ '-': [ ':resize 2-'          , 'Decrease Height (-2)'] ,
-      \ '=': [ ':resize 2+'          , 'Increase Height (+2)'] ,
-      \ 'h': [ '<C-w>h'              , 'Go Left A Window'    ] ,
-      \ 'j': [ '<C-w>j'              , 'Go Down A Window'    ] ,
-      \ 'k': [ '<C-w>k'              , 'Go Up A Window'      ] ,
-      \ 'l': [ '<C-w>l'              , 'Go Right A Window'   ] ,
-      \ 'r': [ ':vsplit'             , 'Duplicate Right'     ] ,
-      \ 's': [ ':Windows'            , 'Search Windows'      ] ,
-      \ 't': [ '<C-w>T'              , 'Open Windows In Tabs'] ,
-      \ 'u': [ ':split'              , 'Duplicate Below'     ]
-      \ }
-
 
 
 " Register which key map
-autocmd! User vim-which-key call which_key#register('<Space>', "g:which_key_map")
+autocmd! User vim-which-key call which_key#register('<SPACE>', "g:which_key_map")

@@ -8,8 +8,8 @@
 "                              |___/
 
 " Theme
-colorscheme gruvbox " Set colorscheme to gruvbox
-set background=dark " Tell vim what the background color looks like
+colorscheme gruvbox " Set colorscheme
+set background=dark " Use dark theme
 
 " Tab configuration
 set tabstop=2 softtabstop=2 " Make tab 2 spaces long

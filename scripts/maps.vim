@@ -7,7 +7,7 @@
 "              | |   | |             __/ |
 "              |_|   |_|            |___/
 
-" ––– General Key Maps –––
+" ––– Key Maps –––
 
 " Set space to the leader key
 let mapleader = ' '
@@ -31,35 +31,62 @@ nnoremap ≤ I<C-c>
 nnoremap <CR> o<ESC>
 
 " Backspace in normal mode to delete previous character
-nnoremap <BS> hx
+nnoremap <BS> dh
 
 " Space + i to insert a character before the current position in normal mode
-nnoremap <LEADER>I i <ESC>r
+nnoremap <LEADER>i i <ESC>r
 
 " Space + a to insert a character after the current position in normal mode
-nnoremap <LEADER>A li <ESC>r
+nnoremap <LEADER>a li <ESC>r
 
+" ; (semicolon) to go to the end of the line
+nnoremap ; $
 
-" ––– Code Formatting –––
+" Start Live Easy Align with oa in visual and normal mode
+nmap <LEADER>oa <Plug>(LiveEasyAlign)
+xmap <LEADER>oa <Plug>(LiveEasyAlign)
 
-nnoremap <C-b> <SILENT>:Autoformat<CR>
-inoremap <C-b> <SILENT><ESC>:Autoformat<CR>i
+" Format which-key.vim dictionary
+nmap <LEADER>oA vi{:EasyAlign*/[,\]]/l0is<CR>
+xmap <LEADER>oA vi{:EasyAlign*/[,\]]/l0is<CR>
+
+" Search and replace
+function SearchAndReplace()
+  echohl GruvboxPurpleBold
+  let l:search = input("Search Regular Expression: ")
+  let l:replace = input("Replace With: ")
+  execute '%s/' . l:search . '/' . l:replace . '/gc'
+endfunction
+nnoremap <LEADER>or :call SearchAndReplace()<CR>
+
+" Go to left tab with "gr" instead of "gT"
+nnoremap gr gT
+
+" Copy rest of line with Y (just like D and C)
+nnoremap Y y$
 
 
 " ––– Run Code –––
 
 " Run C++ code with leader + r
-autocmd FileType cpp nnoremap <LEADER>r <C-b>:w<CR>:!g++ "%" -O2 && ./a.out<CR>
-autocmd FileType cpp inoremap ® <ESC><C-b>:w<CR>:!g++ "%" -O2 && ./a.out<CR>
+autocmd FileType cpp nnoremap <LEADER>r :Autoformat<CR>:w<CR>:!g++ "%" -O2 && ./a.out<CR>
+autocmd FileType cpp inoremap ® <ESC>:Autoformat<CR>:w<CR>:!g++ "%" -O2 && ./a.out<CR>
 
 " Save and execute init.vim with leader + r
-autocmd BufRead,BufNewFile *.vim nmap <LEADER>r <C-b>:w<CR>:source $MYVIMRC<CR>:PlugInstall<CR>:q
-autocmd BufRead,BufNewFile *.vim imap ® <ESC><C-b>:w<CR>:source $MYVIMRC<CR>:PlugInstall<CR>:q
+autocmd FileType vim nnoremap <LEADER>r :Autoformat<CR>:w<CR>:source $MYVIMRC<CR>
+autocmd FileType vim inoremap ® <ESC>:Autoformat<CR>:w<CR>:source $MYVIMRC<CR>
 
-" ––– Auto Commands –––
+
+" –– Auto Commands –––
 
 " When Vim is exited
 augroup SetCursorOnLeave
   au!
   autocmd VimLeave * set guicursor=a:ver20-blinkwait300-blinkon200-blinkoff150
 augroup end
+
+" Source MYVIMRC on enter
+augroup SourceMYVIMRC
+  autocmd VimEnter * source $MYVIMRC
+augroup end
+

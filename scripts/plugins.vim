@@ -11,14 +11,14 @@
 call plug#begin('~/.config/nvim/plugged')
 
 
-" Gruvbox theme
+" Themes
+Plug 'Luxed/ayu-vim'
+Plug 'sainnhe/sonokai'
 Plug 'morhetz/gruvbox'
+Plug 'joshdick/onedark.vim'
 
 " Conquer of Completion for intellisense
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
-" Show  a dfirectory tree
-Plug 'preservim/nerdtree'
 
 " C++ IDE
 Plug 'rhysd/vim-clang-format' " code formatting
@@ -27,15 +27,16 @@ Plug 'vim-syntastic/syntastic' " syntax checking
 " Goyo for 'distraction free writing in vim'
 Plug 'junegunn/goyo.vim'
 
-" vim-jsx-pretty for JSX syntax highlighting
+" Vim JSX Pretty for JSX syntax highlighting
 Plug 'maxmellon/vim-jsx-pretty'
 
-" yats for Typescript syntax highlighting
+" Vim Yats for Typescript syntax highlighting
 Plug 'HerringtonDarkholme/yats.vim'
 
-" Snippets
+" Ultisnips for making and using snippets
 Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets' " Premade snippets
+" Premade snippets
+Plug 'honza/vim-snippets'
 
 " Git integration
 Plug 'kdheepak/lazygit.nvim', { 'branch': 'nvim-v0.4.3' } " Epic Git GUI
@@ -45,7 +46,7 @@ Plug 'mhinz/vim-signify' " Show changes in file while editing
 Plug 'ryanoasis/vim-devicons'
 
 " Comment functions for many languages
-Plug 'preservim/nerdcommenter'
+Plug 'tpope/vim-commentary'
 
 " A floating terminal
 Plug 'voldikss/vim-floaterm'
@@ -61,11 +62,8 @@ Plug 'metakirby5/codi.vim'
 " Tagbar for seeing a file's structure
 Plug 'preservim/tagbar'
 
-" Airline for a cool tabline
+" Vim Airline for a cool tabline
 Plug 'vim-airline/vim-airline'
-
-" MRU for reopening closed tabs
-Plug 'yegappan/mru'
 
 " Autoformatting
 Plug 'Chiel92/vim-autoformat'
@@ -82,8 +80,37 @@ Plug 'unblevable/quick-scope'
 " Vim Easy Align for fancy alignment
 Plug 'junegunn/vim-easy-align'
 
-" Vim Surround for epic surrounding stuff
+" Vim Surround for epic surrond stuff
 Plug 'tpope/vim-surround'
+
+" Vim Markdown Preview for opening a preview of a markdown file in a browser
+Plug 'iamcco/markdown-preview.nvim'
+
+" Vim Clap for FZF like stuff
+Plug 'liuchengxu/vim-clap'
+
+" Indent Line to add lines at every indent
+Plug 'Yggdroot/indentLine'
+
+" Vim Bookmarks for making bookmarks to mark file
+Plug 'MattesGroeger/vim-bookmarks'
+
+" Vim Lastplace to move cursor back to last position when opening file
+Plug 'farmergreg/vim-lastplace'
+
+" Vim Startify for starting screen and sessions
+Plug 'mhinz/vim-startify'
+
+" Rainbow Parenthesis for color coded parenthesis, braces, and brackets
+Plug 'junegunn/rainbow_parentheses.vim'
+
+" Vim Ranger for file navigation
+Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
+
+" NERDTree for file navigation (plus file creation)
+Plug 'preservim/nerdtree'
+" NERDTree icons
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 
 " End Plug statements
