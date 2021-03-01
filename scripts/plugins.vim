@@ -112,6 +112,9 @@ Plug 'preservim/nerdtree'
 " NERDTree icons
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
+" FAR for project wide find and replace
+Plug 'brooth/far.vim'
+
 
 " End Plug statements
 call plug#end()

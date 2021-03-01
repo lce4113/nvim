@@ -10,6 +10,7 @@
 " Theme
 colorscheme gruvbox " Set colorscheme
 set background=dark " Use dark theme
+set termguicolors
 
 " Tab configuration
 set tabstop=2 softtabstop=2 " Make tab 2 spaces long
@@ -30,6 +31,7 @@ set incsearch
 set nohlsearch " Remove highlight after last search
 set mouse=a " Allow mouse click to move cursor
 set splitright
+set showtabline=2
 
 " Stop comment continuation to next line
 autocmd FileType * set formatoptions-=cro

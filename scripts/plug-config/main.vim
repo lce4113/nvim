@@ -13,7 +13,7 @@
 let g:syntastic_always_populate_loc_list = 1
 
 
-" ––– Nerd Commenter –––
+" ––– NERD Commenter –––
 
 " Add spaces after comment delimiters by default
 let g:nerdspacedelims = 10
@@ -51,12 +51,8 @@ source ~/.config/nvim/scripts/plug-config/fzf.vim
 
 " ––– Airline –––
 
-" Enable tabline
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep = ''
-let g:airline#extensions#tabline#left_alt_sep = ''
-let g:airline#extensions#tabline#right_sep = ''
-let g:airline#extensions#tabline#right_alt_sep = ''
+" NERDTree integration
+let g:airline#extensions#nerdtree_statusline = 1
 
 " Enable powerline fonts
 let g:airline_powerline_fonts = 1
@@ -65,9 +61,6 @@ let g:airline_right_sep = ''
 
 " Switch to your current theme
 let g:airline_theme = 'gruvbox'
-
-" Always show tabs
-set showtabline=2
 
 
 " ––– Ultisnips –––
@@ -136,3 +129,27 @@ let g:rnvimr_hide_gitignore = 1
 let g:rnvimr_enable_bw = 1
 " Add a shadow window, value is equal to 100 will disable shadow
 let g:rnvimr_shadow_winblend = 70
+
+
+" ––– NERD Tree –––
+
+" Press enter to open file in new tab
+let NERDTreeMapOpenInTab='<CR>'
+" Close NERD Tree after opening a file
+let NERDTreeQuitOnOpen=1
+
+
+" ––– FAR –––
+
+let g:far#source='rgnvim'
+" let g:far#source='rg'
+" let g:far#source='vimgrep'
+" let g:far#source='ag'
+
+set lazyredraw            " improve scrolling performance when navigating through large results
+
+let g:far#window_width=60
+" Use %:p with buffer option only
+let g:far#file_mask_favorites=['%:p', '**/*.*', '**/*.js', '**/*.py', '**/*.java', '**/*.css', '**/*.html', '**/*.vim', '**/*.cpp', '**/*.c', '**/*.h', ]
+let g:far#window_min_content_width=30
+let g:far#enable_undo=1

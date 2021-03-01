@@ -9,7 +9,10 @@ let g:startify_lists = [
 
 let g:startify_bookmarks = [
       \ { 'i': '~/.config/nvim/init.vim' },
-      \ { 'z': '~/.zshrc' },
+      \ { 'n': '~/.config/nvim/' },
+      \ { 't': '~/Google Drive/OmMahesh/Programming/Other/USACO/test.cpp' },
+      \ { 'u': '~/Google Drive/OmMahesh/Programming/Other/USACO/' },
+      \ { 'z': '~/.zshrc' }
       \ ]
 
 let g:startify_custom_header = [

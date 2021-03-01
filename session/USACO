@@ -7,22 +7,14 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +45 scripts/plug-config/which-key.vim
-badd +13 init.vim
-badd +92 scripts/maps.vim
-badd +1 scripts/settings.vim
-badd +1 fzf-history/ag
-badd +5 ~/.config/ranger/rc.conf
-badd +1 .git/FETCH_HEAD
-badd +1 coc-settings.json
-badd +3 test.md
-badd +1 FAR\ 1
-badd +3 FAR\ 2
-badd +1 scripts/plug-config/FAR\ 5
-badd +15 scripts/plug-config/startify.vim
+badd +3 ~/Google\ Drive/OmMahesh/Programming/Other/USACO/test.cpp
+badd +1 ~/Google\ Drive/OmMahesh/Programming/Other/USACO/2021\ January/Silver\ \#1/main.cpp
+badd +1 ~/Google\ Drive/OmMahesh/Programming/Other/USACO/2021\ January/Silver\ \#1/main.in
+badd +1 plugged/vim-snippets/UltiSnips/cpp.snippets
+badd +1 2021\ January/Silver\ \#1/main.in
 argglobal
 %argdel
-edit scripts/settings.vim
+edit 2021\ January/Silver\ \#1/main.in
 set splitbelow splitright
 set nosplitbelow
 wincmd t
@@ -40,39 +32,13 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 19) / 38)
+let s:l = 1 - ((0 * winheight(0) + 16) / 32)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 1
 normal! 0
-lcd ~/.config/nvim
-tabedit ~/.config/nvim/scripts/plug-config/startify.vim
-set splitbelow splitright
-set nosplitbelow
-wincmd t
-set winminheight=0
-set winheight=1
-set winminwidth=0
-set winwidth=1
-argglobal
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 15 - ((14 * winheight(0) + 19) / 38)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-15
-normal! 012|
-lcd ~/.config/nvim
-tabnext 2
+tabnext 1
 if exists('s:wipebuf') && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
 endif
