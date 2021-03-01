@@ -41,22 +41,24 @@ let g:which_key_map = {
       \    's': [ ':CocList snippets'             , 'COC Snippets'                ] ,
       \    'c': [ ':CocList commands'             , 'COC Commands'                ]
       \ }                                         ,
-      \ 'd': [ ':q | bdelete'                     , 'Quit Buffer'                 ] ,
-      \ 'D': [ ':call delete(expand("%"))'                , 'Delete Current File'         ] ,
+      \ 'd': [ ':q'                               , 'Quit Buffer'                 ] ,
+      \ 'D': [ ':call delete(expand("%"))'        , 'Delete Current File'         ] ,
       \ 'f': [ ':Autoformat'                      , 'Format Buffer'               ] ,
       \ 'F': {
       \    'name' : '+find & replace'             ,
       \    'b' : [':Farr --source=vimgrep'        , 'In Current Buffer'           ] ,
       \    'p' : [':Farr --source=rgnvim'         , 'In Current Project'          ] ,
       \ }                                         ,
-      \ 'g':'+Git'                                ,
+      \ 'g': [ ':LazyGit'                         , 'Open Lazy Git'               ] ,
       \ 'i':'Insert Character'                    ,
+      \ 'j': [ '<Plug>(coc-diagnostic-next)'      , 'Go To Next Error'            ] ,
+      \ 'k': [ '<Plug>(coc-diagnostic-prev)'      , 'Go To Previous Error'            ] ,
       \ 'm': [ ':MRU'                             , 'File History (MRU)'          ] ,
       \ 'n': [ ':set relativenumber!'             , 'Toggle Hybrid Line Numbers'  ] ,
       \ 'N': [ ':set number!'                     , 'Toggle Line Numbers'         ] ,
       \ 'o':'+Other'                              ,
       \ 'p':'+Plug'                               ,
-      \ 'q': [ ':q | bdelete'                     , 'Quit Buffer'                 ] ,
+      \ 'q': [ ':q'                               , 'Quit Buffer'                 ] ,
       \ 'Q': [ ':qa'                              , 'Quit All Buffers'            ] ,
       \ 'r':'Run File'                            ,
       \ 'R': [ ':RnvimrToggle'                    , 'Open Vim Ranger'             ] ,
@@ -68,12 +70,6 @@ let g:which_key_map = {
       \ 'z': [ ':Goyo | set number relativenumber', 'Zen Mode (Goyo)'             ]
       \ }
 
-" Git commands
-let g:which_key_map['g'] = {
-      \ 'name':'+Git'    ,
-      \ 'l': [ ':LazyGit', 'Open Lazy Git']
-      \ }
-
 " Other commands
 let g:which_key_map['o'] = {
       \ 'name':'+Other'                       ,
@@ -81,7 +77,7 @@ let g:which_key_map['o'] = {
       \ 'A': 'Format Vim Which Key Dictionary',
       \ 'd': [ ':qa'                          , 'Quit All Buffers'             ] ,
       \ 'o': [ '<C-w>gf'                      , 'Open File In New Tab'         ] ,
-      \ 'q': [ ':q! | bdelete!'               , 'Force Quit Buffer'            ] ,
+      \ 'q': [ ':q!'                          , 'Force Quit Buffer'            ] ,
       \ 'Q': [ ':qa!'                         , 'Force Quit All Buffers'       ] ,
       \ 'r': 'Search And Replace'             ,
       \ 's': [ ':source $MYVIMRC'             , 'Reload MYVIMRC'               ] ,

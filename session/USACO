@@ -2,19 +2,20 @@ let SessionLoad = 1
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd ~/.config/nvim
+cd ~/Google\ Drive/OmMahesh/Programming/Other/USACO
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +3 ~/Google\ Drive/OmMahesh/Programming/Other/USACO/test.cpp
-badd +1 ~/Google\ Drive/OmMahesh/Programming/Other/USACO/2021\ January/Silver\ \#1/main.cpp
-badd +1 ~/Google\ Drive/OmMahesh/Programming/Other/USACO/2021\ January/Silver\ \#1/main.in
-badd +1 plugged/vim-snippets/UltiSnips/cpp.snippets
+badd +1 test.cpp
+badd +1 2021\ January/Silver\ \#1/main.cpp
 badd +1 2021\ January/Silver\ \#1/main.in
+badd +174 ~/.config/nvim/plugged/vim-snippets/UltiSnips/cpp.snippets
+badd +1 ~/.config/nvim/plugged/vim-snippets/snippets/cpp.snippets
+badd +1 ~/.config/nvim/UltiSnips/cpp.snippets
 argglobal
 %argdel
-edit 2021\ January/Silver\ \#1/main.in
+edit test.cpp
 set splitbelow splitright
 set nosplitbelow
 wincmd t
@@ -32,13 +33,60 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 16) / 32)
+let s:l = 1 - ((0 * winheight(0) + 14) / 29)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 1
 normal! 0
-tabnext 1
+tabedit 2021\ January/Silver\ \#1/main.cpp
+set splitbelow splitright
+set nosplitbelow
+wincmd t
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 1 - ((0 * winheight(0) + 14) / 29)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+1
+normal! 011|
+tabedit ~/.config/nvim/UltiSnips/cpp.snippets
+set splitbelow splitright
+set nosplitbelow
+wincmd t
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
+argglobal
+setlocal fdm=syntax
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=99
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+let s:l = 60 - ((14 * winheight(0) + 14) / 29)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+60
+normal! 0
+tabnext 2
 if exists('s:wipebuf') && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
 endif

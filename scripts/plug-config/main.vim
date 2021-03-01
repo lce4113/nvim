@@ -134,9 +134,11 @@ let g:rnvimr_shadow_winblend = 70
 " ––– NERD Tree –––
 
 " Press enter to open file in new tab
-let NERDTreeMapOpenInTab='<CR>'
+let NERDTreeMapOpenInTabSilent='<CR>'
 " Close NERD Tree after opening a file
 let NERDTreeQuitOnOpen=1
+" Show hidden files by default
+let NERDTreeShowHidden=1
 
 
 " ––– FAR –––
@@ -153,3 +155,14 @@ let g:far#window_width=60
 let g:far#file_mask_favorites=['%:p', '**/*.*', '**/*.js', '**/*.py', '**/*.java', '**/*.css', '**/*.html', '**/*.vim', '**/*.cpp', '**/*.c', '**/*.h', ]
 let g:far#window_min_content_width=30
 let g:far#enable_undo=1
+
+
+" ––– COC Snippets –––
+
+" Use tab to expand snippets in insert and visual mode
+imap <TAB> <Plug>(coc-snippets-expand)
+vmap <TAB> <Plug>(coc-snippets-select)
+xmap <TAB> <Plug>(coc-convert-snippet)
+imap <TAB> <Plug>(coc-snippets-expand-jump)
+let g:coc_snippet_next = '<TAB>'
+let g:coc_snippet_prev = '<S-TAB>'

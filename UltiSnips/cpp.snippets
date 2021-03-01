@@ -1,52 +1,62 @@
 snippet main "A boilerplate for USACO problems" b
-// ––– ${1:`!v strftime("%Y %B")`}: ${2:Bronze} #$3 –––
+// ––– ${1:`!v strftime("%Y")`} ${2:`!v strftime("%B")`}: ${3:Bronze} #${4:1} –––
 
 #include <bits/stdc++.h>
+#include <cstdio>
+#include <iostream>
 
 using namespace std;
 
-int main() {
-	ifstream fin("${4:main}.in");
-	ofstream fout("$4.out");
+int main()
+{
+	freopen("${5:main}.in", "r", stdin);
 
 	int n;
-	// cin >> n;
-	fin >> n;
+	cin >> n;
 
-	cout << m;
+	int m;
+	$0
+
+		cout << m;
 }
 endsnippet
 
 snippet mainold "A boilerplate for old USACO problems that need fileio" b
-// ––– ${1:`!v strftime("%Y %B")`}: ${2:Bronze} #$3 –––
+// ––– ${1:2020} ${2:January}: ${3:Bronze} #${4:1} –––
 
 #include <bits/stdc++.h>
+#include <cstdio>
 
 using namespace std;
 
 int main() {
-	ifstream fin("${4:cow}.in");
-	ofstream fout("$4.out");
+	freopen("${5:main}.in", "r", stdin);
+	/* freopen("$5.out", "w", stdout); */
 
-	int n;
-	fin >> n;
+	int n; cin >> n;
 
-	cout << m;
+	$0
+
+		cout << m;
 }
 endsnippet
 
-snippet inarr "Take an array as input" b
+snippet inarr "Take input as array" b
 ${1:int} ${2:arr}[${3:n}];
 for (int i = 0; i < $3; i++) {
 	$1 ${4:elt};
 	fin >> $4;
 	${5:// cin >> $4;}
 }
+$0
 endsnippet
 
 
-snippet include "An include statement" b
-#include <$1>
+snippet inc "An include statement" b
+#include <${1:bits/stdc++.h}>$0
+endsnippet
+snippet #inc "An include statement" b
+#include <${1:bits/stdc++.h}>$0
 endsnippet
 
 snippet "bits" "Include the bits/stdc++.h header file" b

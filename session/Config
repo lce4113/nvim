@@ -7,10 +7,9 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +45 scripts/plug-config/which-key.vim
+badd +54 scripts/plug-config/which-key.vim
 badd +13 init.vim
-badd +92 scripts/maps.vim
-badd +1 scripts/settings.vim
+badd +68 scripts/maps.vim
 badd +1 fzf-history/ag
 badd +5 ~/.config/ranger/rc.conf
 badd +1 .git/FETCH_HEAD
@@ -19,10 +18,11 @@ badd +3 test.md
 badd +1 FAR\ 1
 badd +3 FAR\ 2
 badd +1 scripts/plug-config/FAR\ 5
-badd +15 scripts/plug-config/startify.vim
+badd +137 scripts/plug-config/main.vim
+badd +117 scripts/plugins.vim
 argglobal
 %argdel
-edit scripts/settings.vim
+edit scripts/plugins.vim
 set splitbelow splitright
 set nosplitbelow
 wincmd t
@@ -40,14 +40,14 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 19) / 38)
+let s:l = 117 - ((24 * winheight(0) + 14) / 29)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
+117
 normal! 0
 lcd ~/.config/nvim
-tabedit ~/.config/nvim/scripts/plug-config/startify.vim
+tabedit ~/.config/nvim/scripts/plug-config/which-key.vim
 set splitbelow splitright
 set nosplitbelow
 wincmd t
@@ -65,14 +65,69 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 15 - ((14 * winheight(0) + 19) / 38)
+let s:l = 54 - ((12 * winheight(0) + 14) / 29)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-15
-normal! 012|
+54
+let s:c = 42 - ((23 * winwidth(0) + 31) / 63)
+if s:c > 0
+  exe 'normal! ' . s:c . '|zs' . 42 . '|'
+else
+  normal! 042|
+endif
 lcd ~/.config/nvim
-tabnext 2
+tabedit ~/.config/nvim/scripts/maps.vim
+set splitbelow splitright
+set nosplitbelow
+wincmd t
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 60 - ((28 * winheight(0) + 14) / 29)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+60
+normal! 0
+lcd ~/.config/nvim
+tabedit ~/.config/nvim/scripts/plug-config/main.vim
+set splitbelow splitright
+set nosplitbelow
+wincmd t
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 140 - ((7 * winheight(0) + 14) / 29)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+140
+normal! 030|
+lcd ~/.config/nvim
+tabnext 4
 if exists('s:wipebuf') && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
 endif
