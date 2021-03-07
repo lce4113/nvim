@@ -2,20 +2,27 @@ let SessionLoad = 1
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd ~/Google\ Drive/OmMahesh/Programming/Other/USACO
+cd ~/Google\ Drive/OmMahesh/Programming/Other/USACO/2021\ February/Bronze\ \#2
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +1 test.cpp
-badd +1 2021\ January/Silver\ \#1/main.cpp
-badd +1 2021\ January/Silver\ \#1/main.in
-badd +174 ~/.config/nvim/plugged/vim-snippets/UltiSnips/cpp.snippets
-badd +1 ~/.config/nvim/plugged/vim-snippets/snippets/cpp.snippets
-badd +1 ~/.config/nvim/UltiSnips/cpp.snippets
+badd +38 ~/Google\ Drive/OmMahesh/Programming/Other/USACO/2021\ January/Silver\ \#1/main.cpp
+badd +27 ~/.config/nvim/UltiSnips/cpp.snippets
+badd +9 main.in
+badd +1 Makefile
+badd +4 main2.cpp
+badd +4 main.cpp
+badd +4 ~/.config/nvim/UltiSnips/snippets.snippets
+badd +1 ~/.config/nvim/plugged/vim-snippets/snippets/snippets.snippets
+badd +1 ~/.config/nvim/plugged/vim-snippets/snippets/simplemvcf.snippets
+badd +1 ~/.config/nvim/plugged/vim-snippets/snippets/_.snippets
+badd +1 ~/.config/nvim/main.cpp
+badd +1 ~/.config/nvim/main.in
+badd +1 ~/.config/nvim/Makefile
 argglobal
 %argdel
-edit test.cpp
+edit main.in
 set splitbelow splitright
 set nosplitbelow
 wincmd t
@@ -33,13 +40,13 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 14) / 29)
+let s:l = 9 - ((8 * winheight(0) + 16) / 33)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
-normal! 0
-tabedit 2021\ January/Silver\ \#1/main.cpp
+9
+normal! 03|
+tabedit main.cpp
 set splitbelow splitright
 set nosplitbelow
 wincmd t
@@ -47,6 +54,10 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
+exe '2resize ' . ((&lines * 1 + 18) / 36)
+exe 'vert 2resize ' . ((&columns * 1 + 36) / 72)
+exe '3resize ' . ((&lines * 1 + 18) / 36)
+exe 'vert 3resize ' . ((&columns * 37 + 36) / 72)
 argglobal
 setlocal fdm=manual
 setlocal fde=0
@@ -57,35 +68,39 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 14) / 29)
+let s:l = 4 - ((3 * winheight(0) + 16) / 33)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
-normal! 011|
-tabedit ~/.config/nvim/UltiSnips/cpp.snippets
-set splitbelow splitright
-set nosplitbelow
-wincmd t
-set winminheight=0
-set winheight=1
-set winminwidth=0
-set winwidth=1
+4
+normal! 03|
+wincmd w
 argglobal
-setlocal fdm=syntax
+enew
+setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
 setlocal fdi=#
-setlocal fdl=99
+setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-let s:l = 60 - ((14 * winheight(0) + 14) / 29)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-60
-normal! 0
+wincmd w
+argglobal
+enew
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+wincmd w
+exe '2resize ' . ((&lines * 1 + 18) / 36)
+exe 'vert 2resize ' . ((&columns * 1 + 36) / 72)
+exe '3resize ' . ((&lines * 1 + 18) / 36)
+exe 'vert 3resize ' . ((&columns * 37 + 36) / 72)
 tabnext 2
 if exists('s:wipebuf') && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

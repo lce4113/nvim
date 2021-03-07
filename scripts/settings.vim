@@ -8,7 +8,8 @@
 "                              |___/
 
 " Theme
-colorscheme gruvbox " Set colorscheme
+colorscheme sonokai " Set colorscheme
+let g:airline_theme = "sonokai" " Airline theme
 set background=dark " Use dark theme
 set termguicolors
 

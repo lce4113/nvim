@@ -65,28 +65,40 @@ nnoremap gr gT
 " Copy rest of line with Y (just like D and C)
 nnoremap Y y$
 
+" Press e to delete character and enter insert mode
+nnoremap e cl
+
 
 " ––– Run Code –––
 
 " Run C++ code with leader + r
-autocmd FileType cpp nnoremap <LEADER>r :Autoformat<CR>:w<CR>:!g++ "%" -O2 && ./a.out<CR>
-autocmd FileType cpp inoremap ® <ESC>:Autoformat<CR>:w<CR>:!g++ "%" -O2 && ./a.out<CR>
+autocmd FileType cpp nnoremap <LEADER>r :Autoformat \| w \| !make -s && cat main.in \| ./output<CR>
+autocmd FileType cpp inoremap ® <ESC>:Autoformat \| w \| !make -s && cat main.in \| ./output<CR>
 
-" Save and execute init.vim with leader + r
-autocmd FileType vim nnoremap <LEADER>r :Autoformat<CR>:w<CR>:source $MYVIMRC<CR>
-autocmd FileType vim inoremap ® <ESC>:Autoformat<CR>:w<CR>:source $MYVIMRC<CR>
+" Save and source .vim files
+autocmd FileType vim nnoremap <LEADER>r :Autoformat \| w \| source $MYVIMRC<CR>
+autocmd FileType vim inoremap ® <ESC>:Autoformat \| w \| source $MYVIMRC<CR>
+
+" Save, source, and PlugInstall in plugins.vim
+autocmd BufEnter plugins.vim nnoremap <SILENT> <LEADER>r :Autoformat \| w \| source $MYVIMRC \| PlugUpdate \| q<CR>
+autocmd BufEnter plugins.vim inoremap <SILENT> ® <ESC>:Autoformat \| w \| source $MYVIMRC \| PlugUpdate \| q<CR>
 
 
 " –– Auto Commands –––
 
 " When Vim is exited
 augroup SetCursorOnLeave
-  au!
+  autocmd!
   autocmd VimLeave * set guicursor=a:ver20-blinkwait300-blinkon200-blinkoff150
 augroup end
 
 " Source MYVIMRC on enter
 augroup SourceMYVIMRC
+  autocmd!
   autocmd VimEnter * source $MYVIMRC
-augroup end
+augroup END
 
+augroup OnColorSchemeChange
+  autocmd!
+  autocmd ColorScheme * let g:airline_theme = g:colors_name
+augroup END

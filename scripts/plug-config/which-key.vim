@@ -45,7 +45,7 @@ let g:which_key_map = {
       \ 'D': [ ':call delete(expand("%"))'        , 'Delete Current File'         ] ,
       \ 'f': [ ':Autoformat'                      , 'Format Buffer'               ] ,
       \ 'F': {
-      \    'name' : '+find & replace'             ,
+      \    'name' : '+FAR'             ,
       \    'b' : [':Farr --source=vimgrep'        , 'In Current Buffer'           ] ,
       \    'p' : [':Farr --source=rgnvim'         , 'In Current Project'          ] ,
       \ }                                         ,
@@ -87,13 +87,14 @@ let g:which_key_map['o'] = {
       \ 'w':'+Windows'
       \ }
 
-" Window commands
+" Startify commands
 let g:which_key_map['o']['S'] = {
       \ 'name':'+Startify',
-      \ 'l': [ ':SLoad'   , 'Load Session'  ] ,
-      \ 's': [ ':SSave'   , 'Save Session'  ] ,
+      \ 'c': [ ':SClose'  , 'Close Session' ] ,
       \ 'd': [ ':SDelete' , 'Delete Session'] ,
-      \ 'c': [ ':SClose'  , 'Close Session' ]
+      \ 'l': [ ':SLoad'   , 'Load Session'  ] ,
+      \ 'o': [ ':Startify', 'Open Startify' ] ,
+      \ 's': [ ':SSave'   , 'Save Session'  ]
       \ }
 
 " Window commands
@@ -102,9 +103,13 @@ let g:which_key_map['o']['w'] = {
       \ '=': [ '<C-w>='  , 'Equalize Window Height'] ,
       \ 'b': [ ':split'  , 'Duplicate Below'       ] ,
       \ 'h': [ '<C-w>h'  , 'Go Left A Window'      ] ,
+      \ 'H': [ '<C-w>H'  , 'Move Window Left'      ] ,
       \ 'j': [ '<C-w>j'  , 'Go Down A Window'      ] ,
+      \ 'J': [ '<C-w>J'  , 'Move Window Down'      ] ,
       \ 'k': [ '<C-w>k'  , 'Go Up A Window'        ] ,
+      \ 'K': [ '<C-w>K'  , 'Move Window Up'      ] ,
       \ 'l': [ '<C-w>l'  , 'Go Right A Window'     ] ,
+      \ 'L': [ '<C-w>L'  , 'Move Window Right'      ] ,
       \ 'o': [ '<C-w>+'  , 'Increase Height (+2)'  ] ,
       \ 'r': [ ':vsplit' , 'Duplicate Right'       ] ,
       \ 's': [ ':Windows', 'Search Windows'        ] ,

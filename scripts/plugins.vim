@@ -7,12 +7,11 @@
 "                  __/ |
 "                 |___/
 
-" Begin Plug statements
+" Vim Plug begin
 call plug#begin('~/.config/nvim/plugged')
 
 
 " Themes
-Plug 'Luxed/ayu-vim'
 Plug 'sainnhe/sonokai'
 Plug 'morhetz/gruvbox'
 Plug 'joshdick/onedark.vim'
@@ -115,6 +114,9 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 " FAR for project wide find and replace
 Plug 'brooth/far.vim'
 
+" Vim Sneak for jumping around a file
+Plug 'justinmk/vim-sneak'
 
-" End Plug statements
+
+" Vim Plug end
 call plug#end()

@@ -59,9 +59,6 @@ let g:airline_powerline_fonts = 1
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 
-" Switch to your current theme
-let g:airline_theme = 'gruvbox'
-
 
 " ––– Ultisnips –––
 
@@ -166,3 +163,23 @@ xmap <TAB> <Plug>(coc-convert-snippet)
 imap <TAB> <Plug>(coc-snippets-expand-jump)
 let g:coc_snippet_next = '<TAB>'
 let g:coc_snippet_prev = '<S-TAB>'
+
+
+" ––– Autoformat –––
+
+autocmd FileType snippets let b:autoformat_autoindent=0
+
+
+" ––– Vim Sneak –––
+
+let g:sneak#label = 1
+let g:sneak#use_ic_scs = 1 " case insensitive sneak
+" immediately move to the next instance of search, if you move the cursor sneak is back to default behavior
+let g:sneak#s_next = 1
+
+" Change the colors
+highlight Sneak guifg=black guibg=#00C7DF ctermfg=black ctermbg=cyan
+highlight SneakScope guifg=red guibg=yellow ctermfg=red ctermbg=yellow
+
+" Cool prompts
+let g:sneak#prompt = '🔎'
