@@ -116,9 +116,7 @@ autocmd FileType * RainbowParentheses
 
 " ––– Vim Ranger –––
 
-" Make Ranger replace netrw and be the file explorer
-let g:rnvimr_ex_enable = 1
-" Make Ranger to be hidden after picking a file
+" Hide Ranger after picking a file
 let g:rnvimr_enable_picker = 1
 " Hide the files included in gitignore
 let g:rnvimr_hide_gitignore = 1
@@ -183,3 +181,8 @@ highlight SneakScope guifg=red guibg=yellow ctermfg=red ctermbg=yellow
 
 " Cool prompts
 let g:sneak#prompt = '🔎'
+
+
+" ––– Vim Clap –––
+
+let g:clap_open_action = { 'ctrl-t': 'tab split', 'ctrl-x': 'split', 'ctrl-v': 'vsplit' }

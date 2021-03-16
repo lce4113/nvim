@@ -35,24 +35,19 @@ let g:which_key_map = {
       \ ']': [ '<C-]>'                            , 'Jump To Section In Help File'] ,
       \ 'a':'Append Character'                    ,
       \ 'c': [ ':Commentary'                      , 'Toggle Comment'              ] ,
-      \ 'C': {
-      \    'name':'+COC'                          ,
-      \    'm': [ ':CocList marketplace'          , 'COC Marketplace'             ] ,
-      \    's': [ ':CocList snippets'             , 'COC Snippets'                ] ,
-      \    'c': [ ':CocList commands'             , 'COC Commands'                ]
-      \ }                                         ,
       \ 'd': [ ':q'                               , 'Quit Buffer'                 ] ,
       \ 'D': [ ':call delete(expand("%"))'        , 'Delete Current File'         ] ,
       \ 'f': [ ':Autoformat'                      , 'Format Buffer'               ] ,
       \ 'F': {
-      \    'name' : '+FAR'             ,
+      \    'name' : '+FAR'                        ,
       \    'b' : [':Farr --source=vimgrep'        , 'In Current Buffer'           ] ,
       \    'p' : [':Farr --source=rgnvim'         , 'In Current Project'          ] ,
       \ }                                         ,
       \ 'g': [ ':LazyGit'                         , 'Open Lazy Git'               ] ,
       \ 'i':'Insert Character'                    ,
       \ 'j': [ '<Plug>(coc-diagnostic-next)'      , 'Go To Next Error'            ] ,
-      \ 'k': [ '<Plug>(coc-diagnostic-prev)'      , 'Go To Previous Error'            ] ,
+      \ 'k': [ '<Plug>(coc-diagnostic-prev)'      , 'Go To Previous Error'        ] ,
+      \ 'l': '+VimClap'                           ,
       \ 'm': [ ':MRU'                             , 'File History (MRU)'          ] ,
       \ 'n': [ ':set relativenumber!'             , 'Toggle Hybrid Line Numbers'  ] ,
       \ 'N': [ ':set number!'                     , 'Toggle Line Numbers'         ] ,
@@ -70,11 +65,46 @@ let g:which_key_map = {
       \ 'z': [ ':Goyo | set number relativenumber', 'Zen Mode (Goyo)'             ]
       \ }
 
+" Vim Clap commands
+let g:which_key_map['l'] = {
+      \ 'name':'+VimClap'             ,
+      \ '/': [ ':Clap search_history' , 'Search History'           ] ,
+      \ 'b': [ ':Clap buffers'        , 'Buffers'                  ] ,
+      \ 'B': [ ':Clap marks'          , 'Bookmarks'                ] ,
+      \ 'c': [ ':Clap bcommits'       , 'Current Buffer''s Commits'] ,
+      \ 'C': [ ':Clap bcommits'       , 'All Commits'              ] ,
+      \ 'e': [ ':Clap registers'      , 'Registers'                ] ,
+      \ 'f': [ ':Clap filer'          , 'File Explorer'            ] ,
+      \ 'F': [ ':Clap files'          , 'Files'                    ] ,
+      \ 'g': [ ':Clap gfiles'         , 'Git Files'                ] ,
+      \ 'G': [ ':Clap git_diff_files' , 'Edited Git Files'         ] ,
+      \ 'h': [ ':Clap help_tags'      , 'Help Tags'                ] ,
+      \ 'l': [ ':Clap blines'         , 'Current Buffer''s Lines'  ] ,
+      \ 'L': [ ':Clap lines'          , 'All Lines'                ] ,
+      \ 'm': [ ':Clap command'        , 'Vim Commands'             ] ,
+      \ 'M': [ ':Clap command_history', 'Vim Command History'      ] ,
+      \ 'o': [ ':Clap loclist'        , 'Location List'            ] ,
+      \ 'O': [ ':Clap proj_tags'      , 'Project Tags'             ] ,
+      \ 'p': [ ':Clap providers'      , 'All Vim Clap Providers'   ] ,
+      \ 'P': [ ':Clap maps'           , 'Key Mappings'             ] ,
+      \ 'q': [ ':Clap quickfix'       , 'Quickfix Errors'          ] ,
+      \ 'r': [ ':Clap grep'           , 'Ripgrep'                  ] ,
+      \ 'R': [ ':Clap grep2'          , 'Ripgrep With Caching'     ] ,
+      \ 's': [ ':Clap colors'         , 'Colorschemes'             ] ,
+      \ 'S': [ ':Clap search_history' , 'Search History'           ] ,
+      \ 't': [ ':Clap filetypes'      , 'Filetypes'                ] ,
+      \ 'T': [ ':Clap tags'           , 'vista.vim Tags'           ] ,
+      \ 'w': [ ':Clap windows'        , 'Windows'                  ] ,
+      \ 'y': [ ':Clap history'        , 'File History'             ] ,
+      \ 'Y': [ ':Clap yanks'          , 'Yanks'                    ]
+      \ }
+
 " Other commands
 let g:which_key_map['o'] = {
       \ 'name':'+Other'                       ,
       \ 'a': '(Live) Easy Align'              ,
       \ 'A': 'Format Vim Which Key Dictionary',
+      \ 'c': '+COC'                           ,
       \ 'd': [ ':qa'                          , 'Quit All Buffers'             ] ,
       \ 'o': [ '<C-w>gf'                      , 'Open File In New Tab'         ] ,
       \ 'q': [ ':q!'                          , 'Force Quit Buffer'            ] ,
@@ -85,6 +115,15 @@ let g:which_key_map['o'] = {
       \ 't': [ ':TagbarToggle'                , 'Toggle Tagbar'                ] ,
       \ 'T': [ ':set termguicolors!'          , 'Toggle "termguicolors" Option'] ,
       \ 'w':'+Windows'
+      \ }
+
+" COC commands
+let g:which_key_map['o']['c'] = {
+      \ 'name':'+COC'                                  ,
+      \ 'm': [ ':CocList marketplace'                  , 'COC Marketplace'] ,
+      \ 's': [ ':CocList snippets'                     , 'COC Snippets'   ] ,
+      \ 'c': [ ':tabe ~/.config/nvim/coc-settings.json', 'COC Config'     ] ,
+      \ 'r': [ ':CocList commands'                     , 'COC Commands'   ]
       \ }
 
 " Startify commands
@@ -128,23 +167,24 @@ let g:which_key_map['p'] = {
       \ 'S': [ ':PlugSnapshot', 'Make Script For Current Plugins']
       \ }
 
-" Search commands
+" FZF commands
 let g:which_key_map['s'] = {
       \ 'name':'+Search'   ,
-      \ 'a': [ ':Ag'       , 'Silver Searcher (Ag)'        ] ,
-      \ 'b': [ ':Buffers'  , 'Buffers'                     ] ,
-      \ 'c': [ ':Colors'   , 'Color Schemes'               ] ,
-      \ 'C': [ ':Commits'  , 'Commit History'              ] ,
-      \ 'f': [ ':GFiles'   , 'Search Files'                ] ,
-      \ 'F': [ ':Filetypes', 'Filetype Syntax Highlighting'] ,
-      \ 'h': [ ':History'  , 'File History'                ] ,
-      \ 'H': [ ':History:' , 'Command History'             ] ,
-      \ 'l': [ ':BLines'   , 'Search Lines'                ] ,
-      \ 'm': [ ':Maps'     , 'Key Mappings'                ] ,
-      \ 's': [ ':Snippets' , 'Snippets'                    ] ,
-      \ 'r': [ ':Rg'       , 'Search Files By Text (Rg)'   ] ,
-      \ 't': [ ':BTags'    , 'Search Tags'                 ] ,
-      \ 'w': [ ':Windows'  , 'Search Windows'              ]
+      \ 'a': [ ':Ag'       , 'Silver Searcher (Ag)'] ,
+      \ 'b': [ ':Buffers'  , 'Buffers'             ] ,
+      \ 'c': [ ':Colors'   , 'Color Schemes'       ] ,
+      \ 'C': [ ':Commits'  , 'Commit History'      ] ,
+      \ 'f': [ ':Files'    , 'Files'               ] ,
+      \ 'g': [ ':GFiles'   , 'Git Files'           ] ,
+      \ 'F': [ ':Filetypes', 'Filetypes'           ] ,
+      \ 'h': [ ':History'  , 'File History'        ] ,
+      \ 'H': [ ':History:' , 'Command History'     ] ,
+      \ 'l': [ ':BLines'   , 'Lines'               ] ,
+      \ 'm': [ ':Maps'     , 'Key Mappings'        ] ,
+      \ 's': [ ':Snippets' , 'Snippets'            ] ,
+      \ 'r': [ ':Rg'       , 'Ripgrep'             ] ,
+      \ 't': [ ':BTags'    , 'Tags'                ] ,
+      \ 'w': [ ':Windows'  , 'Windows'             ]
       \ }
 
 " Tab commands

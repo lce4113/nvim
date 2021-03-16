@@ -97,8 +97,3 @@ augroup SourceMYVIMRC
   autocmd!
   autocmd VimEnter * source $MYVIMRC
 augroup END
-
-augroup OnColorSchemeChange
-  autocmd!
-  autocmd ColorScheme * let g:airline_theme = g:colors_name
-augroup END
