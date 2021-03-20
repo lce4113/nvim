@@ -17,11 +17,10 @@ let g:syntastic_always_populate_loc_list = 1
 
 " Add spaces after comment delimiters by default
 let g:nerdspacedelims = 10
-
 " Enable trimming of trailing whitespace when uncommenting
 let g:nerdtrimtrailingwhitespace = 1
 " Enable nerdcommentertoggle to check all selected lines is commented or not
-let g:nerdtogglecheckalllines = 1
+" let g:nerdtogglecheckalllines = 1
 
 
 " ––– Floaterm –––
@@ -58,13 +57,6 @@ let g:airline#extensions#nerdtree_statusline = 1
 let g:airline_powerline_fonts = 1
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
-
-
-" ––– Ultisnips –––
-
-" Set ultisnips triggers
-let g:UltiSnipsJumpForwardTrigger="<TAB>"
-let g:UltiSnipsJumpBackwardTrigger="<S-TAB>"
 
 
 " ––– Auto Pairs –––
@@ -114,18 +106,6 @@ let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
 autocmd FileType * RainbowParentheses
 
 
-" ––– Vim Ranger –––
-
-" Hide Ranger after picking a file
-let g:rnvimr_enable_picker = 1
-" Hide the files included in gitignore
-let g:rnvimr_hide_gitignore = 1
-" Make Neovim wipe the buffers corresponding to the files deleted by Ranger
-let g:rnvimr_enable_bw = 1
-" Add a shadow window, value is equal to 100 will disable shadow
-let g:rnvimr_shadow_winblend = 70
-
-
 " ––– NERD Tree –––
 
 " Press enter to open file in new tab
@@ -143,7 +123,7 @@ let g:far#source='rgnvim'
 " let g:far#source='vimgrep'
 " let g:far#source='ag'
 
-set lazyredraw            " improve scrolling performance when navigating through large results
+set lazyredraw " improve scrolling performance when navigating through large results
 
 let g:far#window_width=60
 " Use %:p with buffer option only
@@ -155,12 +135,12 @@ let g:far#enable_undo=1
 " ––– COC Snippets –––
 
 " Use tab to expand snippets in insert and visual mode
-imap <TAB> <Plug>(coc-snippets-expand)
-vmap <TAB> <Plug>(coc-snippets-select)
-xmap <TAB> <Plug>(coc-convert-snippet)
-imap <TAB> <Plug>(coc-snippets-expand-jump)
-let g:coc_snippet_next = '<TAB>'
-let g:coc_snippet_prev = '<S-TAB>'
+" imap <TAB> <Plug>(coc-snippets-expand)
+" vmap <TAB> <Plug>(coc-snippets-select)
+" xmap <TAB> <Plug>(coc-convert-snippet)
+" imap <TAB> <Plug>(coc-snippets-expand-jump)
+" let g:coc_snippet_next = '<TAB>'
+" let g:coc_snippet_prev = '<S-TAB>'
 
 
 " ––– Autoformat –––
@@ -186,3 +166,29 @@ let g:sneak#prompt = '🔎'
 " ––– Vim Clap –––
 
 let g:clap_open_action = { 'ctrl-t': 'tab split', 'ctrl-x': 'split', 'ctrl-v': 'vsplit' }
+
+
+" ––– Vim LSP Config –––
+
+source ~/.config/nvim/scripts/plug-config/lspconfig.vim
+
+
+" ––– Vim Compe –––
+
+luafile ~/.config/nvim/scripts/plug-config/compe.lua
+
+
+" ––– Vim LSP Kind –––
+
+luafile ~/.config/nvim/scripts/plug-config/lspkind.lua
+
+
+" ––– Snippets –––
+
+source ~/.config/nvim/scripts/plug-config/UltiSnips.vim
+" luafile ~/.config/nvim/scripts/plug-config/UltiSnips.vim
+
+
+" ––– LSP Saga –––
+
+luafile ~/.config/nvim/scripts/plug-config/lspsaga.lua

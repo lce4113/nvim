@@ -68,20 +68,44 @@ nnoremap Y y$
 " Press e to delete character and enter insert mode
 nnoremap e cl
 
+" Move faster when pressing shift + key
+nnoremap H 4h
+nnoremap J 4j
+nnoremap K 4k
+nnoremap L 4l
+
 
 " ––– Run Code –––
 
-" Run C++ code with leader + r
-autocmd FileType cpp nnoremap <LEADER>r :Autoformat \| w \| !make -s && cat main.in \| ./output<CR>
-autocmd FileType cpp inoremap ® <ESC>:Autoformat \| w \| !make -s && cat main.in \| ./output<CR>
+" C++
 
-" Save and source .vim files
+" "r" for run
+autocmd FileType cpp nnoremap <LEADER>r :Autoformat \| w \| !g++ -O2 -lm -std=c++17 -o output % && cat main.in \| ./output<CR>
+autocmd FileType cpp inoremap ® <ESC>:Autoformat \| w \| !g++ -O2 -lm -std=c++17 -o output % && cat main.in \| ./output<CR>
+
+" "R" for run without input
+autocmd FileType cpp nnoremap <LEADER>R :Autoformat \| w \| !g++ -O2 -lm -std=c++17 -o output % && ./output<CR>
+autocmd FileType cpp inoremap ‰ <ESC>:Autoformat \| w \| !g++ -O2 -lm -std=c++17 -o output % && ./output<CR>
+
+" Python
+
+" "r" for run
+autocmd FileType py nnoremap <LEADER>R :Autoformat \| w \| !cat main.in \| python3 %<CR>
+autocmd FileType py inoremap ‰ <ESC>:Autoformat \| w \| !cat main.in \| python3 %<CR>
+
+" "R" for run without input
+autocmd FileType py nnoremap <LEADER>R :Autoformat \| w \| python3 %<CR>
+autocmd FileType py inoremap ‰ <ESC>:Autoformat \| w \| python3 %<CR>
+
+" Vim
+
+" "r" for save and source
 autocmd FileType vim nnoremap <LEADER>r :Autoformat \| w \| source $MYVIMRC<CR>
 autocmd FileType vim inoremap ® <ESC>:Autoformat \| w \| source $MYVIMRC<CR>
 
-" Save, source, and PlugInstall in plugins.vim
-autocmd BufEnter plugins.vim nnoremap <SILENT> <LEADER>r :Autoformat \| w \| source $MYVIMRC \| PlugUpdate \| q<CR>
-autocmd BufEnter plugins.vim inoremap <SILENT> ® <ESC>:Autoformat \| w \| source $MYVIMRC \| PlugUpdate \| q<CR>
+" "R" for save, source, and PlugInstall
+autocmd FileType vim nnoremap <LEADER>R :Autoformat \| w \| source $MYVIMRC \| PlugInstall<CR>:q
+autocmd FileType vim inoremap ‰ <ESC>:Autoformat \| w \| source $MYVIMRC \| PlugInstall<CR>:q
 
 
 " –– Auto Commands –––

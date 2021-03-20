@@ -26,8 +26,6 @@ set nowrap " Don't wrap long lines
 set smartcase
 set noswapfile
 set nobackup
-set undodir=~/.config/nvim/undodir
-set undofile
 set incsearch
 set nohlsearch " Remove highlight after last search
 set mouse=a " Allow mouse click to move cursor

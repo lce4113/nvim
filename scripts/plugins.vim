@@ -16,9 +16,6 @@ Plug 'sainnhe/sonokai'
 Plug 'morhetz/gruvbox'
 Plug 'joshdick/onedark.vim'
 
-" Conquer of Completion for intellisense
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
 " C++ IDE
 Plug 'rhysd/vim-clang-format' " code formatting
 Plug 'vim-syntastic/syntastic' " syntax checking
@@ -31,11 +28,6 @@ Plug 'maxmellon/vim-jsx-pretty'
 
 " Vim Yats for Typescript syntax highlighting
 Plug 'HerringtonDarkholme/yats.vim'
-
-" Ultisnips for making and using snippets
-Plug 'SirVer/ultisnips'
-" Premade snippets
-Plug 'honza/vim-snippets'
 
 " Git integration
 Plug 'kdheepak/lazygit.nvim', { 'branch': 'nvim-v0.4.3' } " Epic Git GUI
@@ -103,9 +95,6 @@ Plug 'mhinz/vim-startify'
 " Rainbow Parenthesis for color coded parenthesis, braces, and brackets
 Plug 'junegunn/rainbow_parentheses.vim'
 
-" Vim Ranger for file navigation
-Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
-
 " NERDTree for file navigation (plus file creation)
 Plug 'preservim/nerdtree'
 " NERDTree icons
@@ -116,6 +105,20 @@ Plug 'brooth/far.vim'
 
 " Vim Sneak for jumping around a file
 Plug 'justinmk/vim-sneak'
+
+" Nvim Web Devicons for fancy file icons
+Plug 'kyazdani42/nvim-web-devicons'
+
+" Neovim Native LSP Config
+Plug 'neovim/nvim-lspconfig'
+" Neovim Native LSP Autocomplete
+Plug 'hrsh7th/nvim-compe'
+
+" Vim LSPKind for fancy autocomplete icons
+Plug 'onsails/lspkind-nvim'
+
+" LSP Saga for code actions
+Plug 'glepnir/lspsaga.nvim'
 
 
 " Vim Plug end
