@@ -28,8 +28,9 @@ autocmd BufLeave <buffer> set laststatus=2 noshowmode ruler
 nnoremap <LEADER> :silent WhichKey '<SPACE>'<CR>
 vnoremap <LEADER> :silent<C-u> :silent WhichKeyVisual '<SPACE>'<CR>
 
-" Create maps to add keys to
+" Create map to add keybindings to
 let g:which_key_map =  {}
-
-" Which Key files
+" Source file that builds map
 source ~/.config/nvim/scripts/mappings/which-key-leader.vim
+" Register which key map
+autocmd! User vim-which-key call which_key#register('<SPACE>', "g:which_key_map")

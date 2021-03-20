@@ -10,6 +10,9 @@
 " ––– Which Key –––
 source ~/.config/nvim/scripts/mappings/which-key.vim
 
+" ––– Autocommands –––
+source ~/.config/nvim/scripts/mappings/autocommands.vim
+
 " ––– Key Maps –––
 
 " Press 'jk' to go into normal mode

@@ -42,6 +42,6 @@ set incsearch " Allow highlighting while searching
 set nohlsearch " Remove highlight after last search
 
 " Cursor shape
-set guicursor=n:block-blinkwait300-blinkon200-blinkoff150
-set guicursor+=i-v:ver20-blinkwait300-blinkon200-blinkoff150
-set guicursor+=r:hor20-blinkwait300-blnkon200-blinkoff150
+set guicursor=n:block-blinkwait300-blinkon200-blinkoff150 " Normal mode
+set guicursor+=i-v:ver20-blinkwait300-blinkon200-blinkoff150 " Insert and Visual mode
+set guicursor+=r:hor20-blinkwait300-blinkon200-blinkoff150 " Replace mode

@@ -86,51 +86,15 @@ let g:which_key_map['l'] = {
       \ 'Y': [ ':Clap yanks'          , 'Yanks'                    ]
       \ }
 
+" LSP
+source ~/.config/nvim/scripts/mappings/which-key-leader-h.vim
+" Vim Clap
+source ~/.config/nvim/scripts/mappings/which-key-leader-l.vim
+" Other
 source ~/.config/nvim/scripts/mappings/which-key-leader-o.vim
-
-" Vim Plug commands
-let g:which_key_map['p'] = {
-      \ 'name':'+VimPlug'     ,
-      \ 'c': [ ':PlugClean'   , 'Remove Unlisted Plugins'        ] ,
-      \ 'd': [ ':PlugDiff'    , 'Show Changes'                   ] ,
-      \ 'i': [ ':PlugInstall' , 'Install Plugins'                ] ,
-      \ 'u': [ ':PlugUpdate'  , 'Install + Update Plugins'       ] ,
-      \ 's': [ ':PlugStatus'  , 'Plugin Statuses'                ] ,
-      \ 'S': [ ':PlugSnapshot', 'Make Script For Current Plugins']
-      \ }
-
-" FZF commands
-let g:which_key_map['s'] = {
-      \ 'name':'+Search'   ,
-      \ 'a': [ ':Ag'       , 'Silver Searcher (Ag)'] ,
-      \ 'b': [ ':Buffers'  , 'Buffers'             ] ,
-      \ 'c': [ ':Colors'   , 'Color Schemes'       ] ,
-      \ 'C': [ ':Commits'  , 'Commit History'      ] ,
-      \ 'f': [ ':Files'    , 'Files'               ] ,
-      \ 'g': [ ':GFiles'   , 'Git Files'           ] ,
-      \ 'F': [ ':Filetypes', 'Filetypes'           ] ,
-      \ 'h': [ ':History'  , 'File History'        ] ,
-      \ 'H': [ ':History:' , 'Command History'     ] ,
-      \ 'l': [ ':BLines'   , 'Lines'               ] ,
-      \ 'm': [ ':Maps'     , 'Key Mappings'        ] ,
-      \ 's': [ ':Snippets' , 'Snippets'            ] ,
-      \ 'r': [ ':Rg'       , 'Ripgrep'             ] ,
-      \ 't': [ ':BTags'    , 'Tags'                ] ,
-      \ 'w': [ ':Windows'  , 'Windows'             ]
-      \ }
-
-" Tab commands
-let g:which_key_map['t'] = {
-      \ 'name':'+Tabs'         ,
-      \ '.': [ ':tabe $MYVIMRC', 'Open $MYVIMRC'     ] ,
-      \ 'd': [ ':tabe %'       , 'Duplicate Tab'     ] ,
-      \ 'h': [ ':tabm +1'      , 'Move Tab Right'    ] ,
-      \ 'l': [ ':tabm -1'      , 'Move Tab Left'     ] ,
-      \ 'n': [ ':tabn'         , 'Go To Next Tab'    ] ,
-      \ 'p': [ ':tabp'         , 'Go To Previous Tab'] ,
-      \ 't': [ ':tabe #'       , 'Open Last Tab'     ]
-      \ }
-
-
-" Register which key map
-autocmd! User vim-which-key call which_key#register('<SPACE>', "g:which_key_map")
+" Vim Plug
+source ~/.config/nvim/scripts/mappings/which-key-leader-p.vim
+" FZF (Search)
+source ~/.config/nvim/scripts/mappings/which-key-leader-s.vim
+" Tabs
+source ~/.config/nvim/scripts/mappings/which-key-leader-t.vim
