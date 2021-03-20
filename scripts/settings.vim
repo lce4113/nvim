@@ -13,13 +13,16 @@ let g:airline_theme = "sonokai" " Airline theme
 set background=dark " Use dark theme
 set termguicolors
 
+" Set space to the leader key
+let mapleader = ' '
+
 " Tab configuration
 set tabstop=2 softtabstop=2 " Make tab 2 spaces long
 set shiftwidth=2 " Make indentation 2 spaces long
 set expandtab " Convert tabs to spaces
 set whichwrap+=<,>,h,l,[,]
 
-set smartindent
+set smartindent " Automatic indentation
 set number relativenumber " Hybrid line numbers
 set cursorline " Highlight current line
 set nowrap " Don't wrap long lines

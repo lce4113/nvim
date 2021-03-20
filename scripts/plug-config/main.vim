@@ -44,9 +44,7 @@ let g:lazygit_use_neovim_remote = 1 " fallback to 0 if neovim-remote is not inst
 
 
 " ––– FZF –––
-
 source ~/.config/nvim/scripts/plug-config/fzf.vim
-
 
 " ––– Airline –––
 
@@ -64,11 +62,6 @@ let g:airline_right_sep = ''
 let g:AutoPairsShortcutToggle='π' " Option + p
 let g:AutoPairsShortcutFastWrap='´' " Option + shift + e
 let g:AutoPairsShortcutJump='µ' " Option + m
-
-
-" ––– Which Key –––
-
-source ~/.config/nvim/scripts/plug-config/which-key.vim
 
 
 " ––– Quickscope –––
@@ -108,8 +101,6 @@ autocmd FileType * RainbowParentheses
 
 " ––– NERD Tree –––
 
-" Press enter to open file in new tab
-let NERDTreeMapOpenInTabSilent='<CR>'
 " Close NERD Tree after opening a file
 let NERDTreeQuitOnOpen=1
 " Show hidden files by default
@@ -169,26 +160,35 @@ let g:clap_open_action = { 'ctrl-t': 'tab split', 'ctrl-x': 'split', 'ctrl-v': '
 
 
 " ––– Vim LSP Config –––
-
 source ~/.config/nvim/scripts/plug-config/lspconfig.vim
 
-
 " ––– Vim Compe –––
-
 luafile ~/.config/nvim/scripts/plug-config/compe.lua
 
-
 " ––– Vim LSP Kind –––
-
 luafile ~/.config/nvim/scripts/plug-config/lspkind.lua
 
-
 " ––– Snippets –––
-
 source ~/.config/nvim/scripts/plug-config/UltiSnips.vim
-" luafile ~/.config/nvim/scripts/plug-config/UltiSnips.vim
-
+" luafile ~/.config/nvim/scripts/plug-config/nvim-snippets.vim
 
 " ––– LSP Saga –––
-
 luafile ~/.config/nvim/scripts/plug-config/lspsaga.lua
+
+" ––– Codi ––––
+
+autocmd BufEnter *.py Codi
+
+let g:codi#interpreters = {
+      \ 'python': {
+      \    'bin': 'python3',
+      \    'prompt': '^\(>>>\|\.\.\.\) '
+      \ }
+      \ }
+
+let g:codi#virtual_text_prefix = " ❯ "
+
+
+" ––– Nvim Barbar –––
+
+

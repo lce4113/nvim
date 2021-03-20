@@ -8,10 +8,14 @@ let g:startify_lists = [
       \ ]
 
 let g:startify_bookmarks = [
+      \ { '.': '~/.config/nvim/init.vim' },
+      \ { 'a': '~/Google Drive/OmMahesh/Programming/Advent of Code/' },
+      \ { 'c': '~/Google Drive/OmMahesh/Programming/USACO/test.cpp' },
+      \ { 'e': '/etc/paths' },
       \ { 'i': '~/.config/nvim/init.vim' },
       \ { 'n': '~/.config/nvim/' },
-      \ { 't': '~/Google Drive/OmMahesh/Programming/Other/USACO/test.cpp' },
-      \ { 'u': '~/Google Drive/OmMahesh/Programming/Other/USACO/' },
+      \ { 'p': '~/Google Drive/OmMahesh/Programming/Advent of Code/test.py' },
+      \ { 'u': '~/Google Drive/OmMahesh/Programming/USACO/' },
       \ { 'z': '~/.zshrc' }
       \ ]
 

@@ -33,9 +33,6 @@ Plug 'HerringtonDarkholme/yats.vim'
 Plug 'kdheepak/lazygit.nvim', { 'branch': 'nvim-v0.4.3' } " Epic Git GUI
 Plug 'mhinz/vim-signify' " Show changes in file while editing
 
-" Allow nerd fonts
-Plug 'ryanoasis/vim-devicons'
-
 " Comment functions for many languages
 Plug 'tpope/vim-commentary'
 
@@ -119,6 +116,9 @@ Plug 'onsails/lspkind-nvim'
 
 " LSP Saga for code actions
 Plug 'glepnir/lspsaga.nvim'
+
+" Nvim Bufferline for an epic tab line
+Plug 'romgrk/barbar.nvim'
 
 
 " Vim Plug end

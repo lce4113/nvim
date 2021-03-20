@@ -11,7 +11,7 @@ Plug 'nvim-lua/completion-nvim'
 let g:UltiSnipsExpandTrigger="<TAB>"
 let g:UltiSnipsJumpForwardTrigger="<TAB>"
 let g:UltiSnipsJumpBackwardTrigger="<S-TAB>"
-let g:UltiSnipsSnippetsDir="~/.config/nvim/snippets/"
+let g:UltiSnipsSnippetsDir="~/.config/nvim/UltiSnips/"
 let g:UltiSnipsEditSplit="tabdo"
 
 

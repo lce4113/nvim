@@ -8,47 +8,11 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +70 scripts/plug-config/main.vim
-badd +48 scripts/plug-config/which-key.vim
-badd +123 scripts/plugins.vim
-badd +91 scripts/maps.vim
-badd +13 ~/init.vim
-badd +1 fzf-history/ag
-badd +5 ~/.config/ranger/rc.conf
-badd +1 .git/FETCH_HEAD
-badd +1 ~/coc-settings.json
-badd +3 ~/test.md
-badd +1 ~/FAR\ 1
-badd +3 ~/FAR\ 2
-badd +1 scripts/plug-config/FAR\ 5
-badd +25 term://.//42465:GIT_EDITOR=nvim\ lazygit\ -p\ \"/Users/om/.config/nvim\"
-badd +29 scripts/settings.vim
-badd +1 ~/\[Plugins]
-badd +26 coc-settings.json
-badd +15 scripts/plug-config/which-key.vim.html
-badd +14 scripts/plug-config/lspconfig.vim
-badd +14 init.vim
-badd +1 scripts/plug-config/compe.lua
-badd +11 scripts/plug-config/lspkind.lua
-badd +1 ~/.config/nvim
-badd +4 scripts/plug-config/treesitter.lua
-badd +1 snippets/cpp.snippets
-badd +1 scripts/plug-config/UltiSnips.vim
-badd +1 scripts/plug-config/nvim-snippets.lua
-badd +9 scripts/plug-config/nvim-snippets.vim
-badd +1 UltiSnips/vim.snippets
-badd +1 scripts/plug-config/lspsaga.lua
+badd +28 scripts/mappings/which-key.vim
+badd +199 scripts/mappings/which-key-leader.vim
 argglobal
 %argdel
-tabnew
-tabnew
-tabnew
-tabnew
-tabnew
-tabnew
-tabnew
-tabrewind
-edit scripts/plugins.vim
+edit scripts/mappings/which-key-leader.vim
 set splitbelow splitright
 set nosplitbelow
 wincmd t
@@ -57,6 +21,7 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 argglobal
+balt scripts/mappings/which-key.vim
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -67,206 +32,14 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 120 - ((16 * winheight(0) + 15) / 30)
+let s:l = 198 - ((26 * winheight(0) + 14) / 28)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 120
-normal! 019|
+keepjumps 198
+normal! 024|
 lcd ~/.config/nvim
-tabnext
-edit ~/.config/nvim/scripts/plug-config/UltiSnips.vim
-set splitbelow splitright
-set nosplitbelow
-wincmd t
-set winminheight=0
-set winheight=1
-set winminwidth=0
-set winwidth=1
-argglobal
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 15) / 30)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 1
-normal! 08|
-lcd ~/.config/nvim
-tabnext
-edit ~/.config/nvim/scripts/plug-config/nvim-snippets.vim
-set splitbelow splitright
-set nosplitbelow
-wincmd t
-set winminheight=0
-set winheight=1
-set winminwidth=0
-set winwidth=1
-argglobal
-balt ~/.config/nvim/scripts/plug-config/UltiSnips.vim
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let &fdl = &fdl
-let s:l = 2 - ((1 * winheight(0) + 15) / 30)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 2
-normal! 0
-lcd ~/.config/nvim
-tabnext
-edit ~/.config/nvim/UltiSnips/vim.snippets
-set splitbelow splitright
-set nosplitbelow
-wincmd t
-set winminheight=0
-set winheight=1
-set winminwidth=0
-set winwidth=1
-argglobal
-balt ~/.config/nvim/scripts/plug-config/UltiSnips.vim
-setlocal fdm=syntax
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=99
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-let s:l = 1 - ((0 * winheight(0) + 15) / 30)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 1
-normal! 0
-lcd ~/.config/nvim
-tabnext
-edit ~/.config/nvim/scripts/plug-config/main.vim
-set splitbelow splitright
-set nosplitbelow
-wincmd t
-set winminheight=0
-set winheight=1
-set winminwidth=0
-set winwidth=1
-argglobal
-balt ~/.config/nvim/scripts/plug-config/nvim-snippets.vim
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let &fdl = &fdl
-let s:l = 194 - ((26 * winheight(0) + 15) / 30)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 194
-normal! 07|
-lcd ~/.config/nvim
-tabnext
-edit ~/.config/nvim/scripts/plug-config/lspsaga.lua
-set splitbelow splitright
-set nosplitbelow
-wincmd t
-set winminheight=0
-set winheight=1
-set winminwidth=0
-set winwidth=1
-argglobal
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let &fdl = &fdl
-let s:l = 33 - ((18 * winheight(0) + 15) / 30)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 33
-normal! 0
-lcd ~/.config/nvim
-tabnext
-edit ~/.config/nvim/scripts/settings.vim
-set splitbelow splitright
-set nosplitbelow
-wincmd t
-set winminheight=0
-set winheight=1
-set winminwidth=0
-set winwidth=1
-argglobal
-balt ~/.config/nvim/scripts/plug-config/which-key.vim
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let &fdl = &fdl
-let s:l = 29 - ((22 * winheight(0) + 15) / 30)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 29
-normal! 010|
-lcd ~/.config/nvim
-tabnext
-edit ~/.config/nvim/scripts/plug-config/which-key.vim
-set splitbelow splitright
-set nosplitbelow
-wincmd t
-set winminheight=0
-set winheight=1
-set winminwidth=0
-set winwidth=1
-argglobal
-balt ~/.config/nvim/scripts/settings.vim
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let &fdl = &fdl
-let s:l = 48 - ((14 * winheight(0) + 15) / 30)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 48
-normal! 017|
-lcd ~/.config/nvim
-tabnext 6
+tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0&& getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
 endif
