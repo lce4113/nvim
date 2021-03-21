@@ -1,3 +1,5 @@
+
+
 " Make m trigger which key
 nnoremap m :silent WhichKey 'm'<CR>
 vnoremap m :silent<C-u> :silent WhichKeyVisual 'm'<CR>

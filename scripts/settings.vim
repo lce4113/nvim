@@ -24,7 +24,7 @@ set number relativenumber " Hybrid line numbers
 set cursorline " Highlight current line
 set nowrap " Don't wrap long lines
 set colorcolumn= " Remove color column for line length limit
-set formatoptions-=cro " Stop comment continuation to next line
+autocmd FileType * set formatoptions-=cro " Stop comment continuation to next line
 
 " Files
 set noswapfile " Disable swap file

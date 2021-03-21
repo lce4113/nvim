@@ -187,8 +187,3 @@ let g:codi#interpreters = {
       \ }
 
 let g:codi#virtual_text_prefix = " ❯ "
-
-
-" ––– Nvim Barbar –––
-
-

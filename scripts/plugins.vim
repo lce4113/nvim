@@ -117,9 +117,6 @@ Plug 'onsails/lspkind-nvim'
 " LSP Saga for code actions
 Plug 'glepnir/lspsaga.nvim'
 
-" Nvim Bufferline for an epic tab line
-Plug 'romgrk/barbar.nvim'
-
 
 " Vim Plug end
 call plug#end()
