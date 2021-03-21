@@ -10,7 +10,6 @@
 " Vim Plug begin
 call plug#begin('~/.config/nvim/plugged')
 
-
 " Themes
 Plug 'sainnhe/sonokai'
 Plug 'morhetz/gruvbox'
@@ -18,12 +17,6 @@ Plug 'joshdick/onedark.vim'
 
 " Goyo for 'distraction free writing in vim'
 Plug 'junegunn/goyo.vim'
-
-" Vim JSX Pretty for JSX syntax highlighting
-Plug 'maxmellon/vim-jsx-pretty'
-
-" Vim Yats for Typescript syntax highlighting
-Plug 'HerringtonDarkholme/yats.vim'
 
 " Git integration
 Plug 'kdheepak/lazygit.nvim', { 'branch': 'nvim-v0.4.3' } " Epic Git GUI
@@ -106,6 +99,16 @@ Plug 'onsails/lspkind-nvim'
 
 " LSP Saga for code actions
 Plug 'glepnir/lspsaga.nvim'
+
+" COC for autocomplete (for stuff native LSP can't do)
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+" Ultisnips for making and using snippets
+Plug 'SirVer/ultisnips'
+" Premade snippets
+Plug 'honza/vim-snippets'
+" Add UltiSnips to autocomplete
+Plug 'nvim-lua/completion-nvim'
 
 
 " Vim Plug end

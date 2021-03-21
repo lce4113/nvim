@@ -55,21 +55,24 @@ autocmd FileType snippets let b:autoformat_autoindent=0
 " ––– Vim Sneak –––
 source ~/.config/nvim/scripts/plug-config/sneak.vim
 
-" ––– Vim LSP Config –––
-source ~/.config/nvim/scripts/plug-config/lspconfig.vim
+" ––– Vim Clap –––
+let g:clap_open_action = { 'ctrl-t': 'tab split', 'ctrl-x': 'split', 'ctrl-v': 'vsplit' }
 
-" ––– Vim Compe –––
-luafile ~/.config/nvim/scripts/plug-config/compe.lua
+" ––– Vim LSP Config –––
+source ~/.config/nvim/scripts/plug-config/lsp/lsp-config.vim
 
 " ––– Vim LSP Kind –––
-luafile ~/.config/nvim/scripts/plug-config/lspkind.lua
+luafile ~/.config/nvim/scripts/plug-config/lsp/lsp-kind.lua
 
 " ––– Snippets –––
-source ~/.config/nvim/scripts/plug-config/UltiSnips.vim
-" luafile ~/.config/nvim/scripts/plug-config/nvim-snippets.vim
+source ~/.config/nvim/scripts/plug-config/snippets/UltiSnips.vim
+" luafile ~/.config/nvim/scripts/plug-config/snippets/nvim-snippets.vim
 
 " ––– LSP Saga –––
-luafile ~/.config/nvim/scripts/plug-config/lspsaga.lua
+luafile ~/.config/nvim/scripts/plug-config/lsp/lsp-saga.lua
 
 " ––– Codi ––––
 source ~/.config/nvim/scripts/plug-config/codi.vim
+
+" ––– Nvim Completion ––––
+source ~/.config/nvim/scripts/plug-config/completion.vim

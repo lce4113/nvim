@@ -10,22 +10,27 @@ endif
 set shortmess=aoO
 badd +22 init.vim
 badd +47 scripts/settings.vim
-badd +1 scripts/plugins.vim
-badd +26 scripts/plug-config/main.vim
-badd +1 scripts/mappings/mappings.vim
+badd +105 scripts/plugins.vim
+badd +68 scripts/plug-config/main.vim
+badd +21 scripts/mappings/mappings.vim
 badd +33 scripts/mappings/autocommands.vim
 badd +17 scripts/mappings/which-key-leader-p.vim
 badd +1 .gitignore
 badd +4 scripts/mappings/which-key.vim
 badd +4 scripts/mappings/which-key-leader.vim
 badd +19 scripts/mappings/which-key-leader-o.vim
-badd +23 scripts/plug-config/UltiSnips.vim
 badd +7 scripts/mappings/which-key-leader-t.vim
-badd +0 scripts/plug-config/codi.vim
-badd +0 scripts/plug-config/compe.lua
+badd +1 scripts/plug-config/codi.vim
+badd +46 scripts/plug-config/compe.lua
 badd +3 scripts/plug-config/sneak.vim
 badd +2 scripts/plug-config/far.vim
 badd +2 scripts/plug-config/floaterm.vim
+badd +9 scripts/plug-config/snippets/UltiSnips.vim
+badd +1 coc-settings.json
+badd +17 UltiSnips/vim.snippets
+badd +15 scripts/plug-config/lsp/lsp-config.vim
+badd +0 autoload/plug.vim
+badd +1 scripts/plug-config/completion.vim
 argglobal
 %argdel
 tabnew
@@ -34,6 +39,33 @@ tabnew
 tabnew
 tabnew
 tabrewind
+edit scripts/plug-config/compe.lua
+set splitbelow splitright
+set nosplitbelow
+wincmd t
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
+argglobal
+balt scripts/plug-config/main.vim
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 46 - ((24 * winheight(0) + 12) / 25)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 46
+normal! 04|
+tabnext
 edit scripts/plugins.vim
 set splitbelow splitright
 set nosplitbelow
@@ -43,7 +75,7 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 argglobal
-balt scripts/plug-config/UltiSnips.vim
+balt scripts/plug-config/main.vim
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -54,15 +86,14 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 18 - ((17 * winheight(0) + 14) / 28)
+let s:l = 113 - ((23 * winheight(0) + 12) / 25)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 18
+keepjumps 113
 normal! 0
-lcd ~/.config/nvim
 tabnext
-edit ~/.config/nvim/scripts/plug-config/UltiSnips.vim
+edit scripts/plug-config/main.vim
 set splitbelow splitright
 set nosplitbelow
 wincmd t
@@ -71,7 +102,7 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 argglobal
-balt ~/.config/nvim/scripts/plugins.vim
+balt scripts/plug-config/compe.lua
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -82,15 +113,14 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 23 - ((22 * winheight(0) + 14) / 28)
+let s:l = 78 - ((22 * winheight(0) + 12) / 25)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 23
-normal! 041|
-lcd ~/.config/nvim
+keepjumps 78
+normal! 052|
 tabnext
-edit ~/.config/nvim/scripts/plug-config/main.vim
+edit scripts/plug-config/completion.vim
 set splitbelow splitright
 set nosplitbelow
 wincmd t
@@ -99,6 +129,7 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 argglobal
+balt scripts/plug-config/completion.vim
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -109,169 +140,14 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 10 - ((7 * winheight(0) + 14) / 28)
+let s:l = 1 - ((0 * winheight(0) + 12) / 25)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 10
+keepjumps 1
 normal! 0
-lcd ~/.config/nvim
 tabnext
-edit ~/.config/nvim/scripts/plug-config/floaterm.vim
-set splitbelow splitright
-set nosplitbelow
-wincmd t
-set winminheight=0
-set winheight=1
-set winminwidth=0
-set winwidth=1
-exe '2resize ' . ((&lines * 1 + 15) / 31)
-exe 'vert 2resize ' . ((&columns * 1 + 63) / 127)
-exe '4resize ' . ((&lines * 1 + 15) / 31)
-exe 'vert 4resize ' . ((&columns * 18 + 63) / 127)
-exe '5resize ' . ((&lines * 19 + 15) / 31)
-exe 'vert 5resize ' . ((&columns * 50 + 63) / 127)
-exe '6resize ' . ((&lines * 1 + 15) / 31)
-exe 'vert 6resize ' . ((&columns * 17 + 63) / 127)
-exe '7resize ' . ((&lines * 1 + 15) / 31)
-exe 'vert 7resize ' . ((&columns * 13 + 63) / 127)
-exe '8resize ' . ((&lines * 1 + 15) / 31)
-exe 'vert 8resize ' . ((&columns * 1 + 63) / 127)
-exe '9resize ' . ((&lines * 18 + 15) / 31)
-exe 'vert 9resize ' . ((&columns * 50 + 63) / 127)
-argglobal
-balt ~/.config/nvim/scripts/plug-config/floaterm.vim
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let &fdl = &fdl
-let s:l = 2 - ((1 * winheight(0) + 14) / 28)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 2
-normal! 0
-lcd ~/.config/nvim
-wincmd w
-argglobal
-enew
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal nofen
-lcd ~/.config/nvim
-wincmd w
-argglobal
-enew
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-lcd ~/.config/nvim
-wincmd w
-argglobal
-enew
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-lcd ~/.config/nvim
-wincmd w
-argglobal
-enew
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-lcd ~/.config/nvim
-wincmd w
-argglobal
-enew
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal nofen
-lcd ~/.config/nvim
-wincmd w
-argglobal
-enew
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal nofen
-lcd ~/.config/nvim
-wincmd w
-argglobal
-enew
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal nofen
-lcd ~/.config/nvim
-wincmd w
-argglobal
-enew
-balt ~/.config/nvim/scripts/plug-config/floaterm.vim
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-lcd ~/.config/nvim
-wincmd w
-exe '2resize ' . ((&lines * 1 + 15) / 31)
-exe 'vert 2resize ' . ((&columns * 1 + 63) / 127)
-exe '4resize ' . ((&lines * 1 + 15) / 31)
-exe 'vert 4resize ' . ((&columns * 18 + 63) / 127)
-exe '5resize ' . ((&lines * 19 + 15) / 31)
-exe 'vert 5resize ' . ((&columns * 50 + 63) / 127)
-exe '6resize ' . ((&lines * 1 + 15) / 31)
-exe 'vert 6resize ' . ((&columns * 17 + 63) / 127)
-exe '7resize ' . ((&lines * 1 + 15) / 31)
-exe 'vert 7resize ' . ((&columns * 13 + 63) / 127)
-exe '8resize ' . ((&lines * 1 + 15) / 31)
-exe 'vert 8resize ' . ((&columns * 1 + 63) / 127)
-exe '9resize ' . ((&lines * 18 + 15) / 31)
-exe 'vert 9resize ' . ((&columns * 50 + 63) / 127)
-tabnext
-edit ~/.config/nvim/scripts/plug-config/far.vim
+edit scripts/plug-config/snippets/UltiSnips.vim
 set splitbelow splitright
 set nosplitbelow
 wincmd t
@@ -280,7 +156,7 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 argglobal
-balt ~/.config/nvim/scripts/plug-config/far.vim
+balt scripts/plugins.vim
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -291,15 +167,14 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 2 - ((1 * winheight(0) + 14) / 28)
+let s:l = 19 - ((11 * winheight(0) + 12) / 25)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 2
+keepjumps 19
 normal! 0
-lcd ~/.config/nvim
 tabnext
-edit ~/.config/nvim/scripts/mappings/mappings.vim
+edit scripts/plug-config/lsp/lsp-config.vim
 set splitbelow splitright
 set nosplitbelow
 wincmd t
@@ -308,7 +183,7 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 argglobal
-balt ~/.config/nvim/scripts/plug-config/far.vim
+balt scripts/plug-config/snippets/UltiSnips.vim
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -319,19 +194,18 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 21 - ((11 * winheight(0) + 14) / 28)
+let s:l = 22 - ((21 * winheight(0) + 12) / 25)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 21
+keepjumps 22
 normal! 0
-lcd ~/.config/nvim
-tabnext 4
+tabnext 2
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0&& getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
 endif
 unlet! s:wipebuf
-set winheight=1 winwidth=20 winminheight=1 winminwidth=1 shortmess=filnxtToOFIc
+set winheight=1 winwidth=20 winminheight=1 winminwidth=1 shortmess=aoOc
 let s:sx = expand("<sfile>:p:r")."x.vim"
 if filereadable(s:sx)
   exe "source " . fnameescape(s:sx)
