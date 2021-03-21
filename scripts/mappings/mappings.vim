@@ -16,7 +16,8 @@ source ~/.config/nvim/scripts/mappings/autocommands.vim
 " ––– Key Maps –––
 
 " Press 'jk' to go into normal mode
-inoremap jk <C-c>
+inoremap jk <ESC>
+vnoremap jk <ESC>
 
 " Move faster when pressing shift + key
 nnoremap H 4h
@@ -26,9 +27,6 @@ nnoremap L 4l
 
 " Go to left tab with "gr" instead of "gT"
 nnoremap gr gT
-nnoremap gf :BufferLinePick<CR>
-nnoremap gs :BufferLineSortByDirectory<CR>
-nnoremap gS :BufferLineSortByExtension<CR>
 
 " Press e to delete character and enter insert mode
 nnoremap e cl
@@ -56,27 +54,3 @@ nnoremap <CR> o<ESC>
 
 " Backspace in normal mode to delete previous character
 nnoremap <BS> dh
-
-" Space + a to insert a character after the current position in normal mode
-nnoremap <LEADER>a li <ESC>r
-
-" Space + i to insert a character before the current position in normal mode
-nnoremap <LEADER>i i <ESC>r
-
-" Start Live Easy Align with oa in visual and normal mode
-nmap <LEADER>oa <Plug>(LiveEasyAlign)
-xmap <LEADER>oa <Plug>(LiveEasyAlign)
-
-" Format which-key.vim dictionary
-nmap <LEADER>oA vi{:EasyAlign*/[,\]]/l0is<CR>
-xmap <LEADER>oA vi{:EasyAlign*/[,\]]/l0is<CR>
-
-" Search and replace
-function SearchAndReplace()
-  echohl ClapMatches5
-  let l:search = input("Search Regular Expression: ")
-  echohl ClapFuzzyMatches
-  let l:replace = input("Replace With: ")
-  execute '%s/' . l:search . '/' . l:replace . '/gc'
-endfunction
-nnoremap <LEADER>or :call SearchAndReplace()<CR>

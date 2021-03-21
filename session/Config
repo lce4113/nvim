@@ -8,11 +8,22 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +1 init.vim
-badd +49 scripts/settings.vim
-badd +1 test.md
+badd +22 init.vim
+badd +47 scripts/settings.vim
+badd +119 scripts/plugins.vim
+badd +189 scripts/plug-config/main.vim
+badd +66 scripts/mappings/mappings.vim
+badd +33 scripts/mappings/autocommands.vim
+badd +17 scripts/mappings/which-key-leader-p.vim
+badd +1 .gitignore
+badd +4 scripts/mappings/which-key.vim
+badd +5 scripts/mappings/which-key-leader.vim
+badd +28 scripts/mappings/which-key-leader-o.vim
 argglobal
 %argdel
+tabnew
+tabnew
+tabnew
 tabnew
 tabrewind
 edit scripts/settings.vim
@@ -24,7 +35,7 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 argglobal
-balt test.md
+balt init.vim
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -35,15 +46,99 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 49 - ((27 * winheight(0) + 15) / 30)
+let s:l = 47 - ((23 * winheight(0) + 14) / 28)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 49
-normal! 018|
+keepjumps 47
+normal! 0
 lcd ~/.config/nvim
 tabnext
-edit ~/.config/nvim/init.vim
+edit ~/.config/nvim/scripts/plugins.vim
+set splitbelow splitright
+set nosplitbelow
+wincmd t
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
+argglobal
+balt ~/.config/nvim/init.vim
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 119 - ((21 * winheight(0) + 14) / 28)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 119
+normal! 0
+lcd ~/.config/nvim
+tabnext
+edit ~/.config/nvim/scripts/mappings/mappings.vim
+set splitbelow splitright
+set nosplitbelow
+wincmd t
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
+argglobal
+balt ~/.config/nvim/scripts/plugins.vim
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 53 - ((13 * winheight(0) + 13) / 27)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 53
+normal! 0
+lcd ~/.config/nvim
+tabnext
+edit ~/.config/nvim/scripts/mappings/which-key-leader-o.vim
+set splitbelow splitright
+set nosplitbelow
+wincmd t
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
+argglobal
+balt ~/.config/nvim/scripts/mappings/mappings.vim
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 22 - ((17 * winheight(0) + 14) / 28)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 22
+normal! 0
+lcd ~/.config/nvim
+tabnext
+edit ~/.config/nvim/scripts/plug-config/main.vim
 set splitbelow splitright
 set nosplitbelow
 wincmd t
@@ -62,14 +157,14 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 15) / 30)
+let s:l = 189 - ((22 * winheight(0) + 14) / 29)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 1
-normal! 021|
+keepjumps 189
+normal! 010|
 lcd ~/.config/nvim
-tabnext 1
+tabnext 5
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0&& getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
 endif

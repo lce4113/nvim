@@ -1,4 +1,10 @@
-" Top level mappings
+" ––– Top Level Mappings –––
+
+" Space + a to insert a character after the current position in normal mode
+nnoremap <LEADER>a li <ESC>r
+" Space + i to insert a character before the current position in normal mode
+nnoremap <LEADER>i i <ESC>r
+
 let g:which_key_map = {
       \ '.': [ ':tabe $MYVIMRC'                   , 'Open $MYVIMRC'               ] ,
       \ '/': [ ':Commentary'                      , 'Toggle Comment'              ] ,
