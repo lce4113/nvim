@@ -75,4 +75,4 @@ luafile ~/.config/nvim/scripts/plug-config/lsp/lsp-saga.lua
 source ~/.config/nvim/scripts/plug-config/codi.vim
 
 " ––– Nvim Completion ––––
-source ~/.config/nvim/scripts/plug-config/completion.vim
+" source ~/.config/nvim/scripts/plug-config/completion.vim

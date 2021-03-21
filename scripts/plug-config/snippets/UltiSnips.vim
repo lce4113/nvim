@@ -1,12 +1,10 @@
 " ––– COC Snippets –––
 
 " Use tab to expand snippets in insert and visual mode
-imap <TAB> <Plug>(coc-snippets-expand)
-vmap <TAB> <Plug>(coc-snippets-select)
-xmap <TAB> <Plug>(coc-convert-snippet)
-imap <TAB> <Plug>(coc-snippets-expand-jump)
-let g:coc_snippet_next = '<TAB>'
-let g:coc_snippet_prev = '<S-TAB>'
+imap <TAB> <PLUG>(coc-snippets-expand)
+vmap <TAB> <PLUG>(coc-snippets-select)
+xmap <TAB> <PLUG>(coc-convert-snippet)
+imap <TAB> <PLUG>(coc-snippets-expand-jump)
 
 
 " ––– Ultisnips –––
