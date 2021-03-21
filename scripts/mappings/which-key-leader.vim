@@ -1,16 +1,21 @@
 " ––– Top Level Mappings –––
 
-" Space + a to insert a character after the current position in normal mode
+" Comment out line(s)
+nnoremap <LEADER>c :Commentary<CR>
+xnoremap <LEADER>c :Commentary<CR>
+nnoremap <LEADER>/ :Commentary<CR>
+xnoremap <LEADER>/ :Commentary<CR>
+" Append a character after the current position in normal mode
 nnoremap <LEADER>a li <ESC>r
-" Space + i to insert a character before the current position in normal mode
+" Insert a character before the current position in normal mode
 nnoremap <LEADER>i i <ESC>r
 
 let g:which_key_map = {
       \ '.': [ ':tabe $MYVIMRC'                   , 'Open $MYVIMRC'               ] ,
-      \ '/': [ ':Commentary'                      , 'Toggle Comment'              ] ,
+      \ '/': 'Toggle Comment'                     ,
       \ ']': [ '<C-]>'                            , 'Jump To Section In Help File'] ,
       \ 'a':'Append Character'                    ,
-      \ 'c': [ ':Commentary'                      , 'Toggle Comment'              ] ,
+      \ 'c':'Toggle Comment'                      ,
       \ 'd': [ ':q'                               , 'Quit Tab'                    ] ,
       \ 'D': [ ':q!'                              , 'Force Quit Tab'              ] ,
       \ 'f': [ ':Autoformat'                      , 'Format Buffer'               ] ,
