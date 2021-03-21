@@ -19,12 +19,6 @@ source ~/.config/nvim/scripts/mappings/autocommands.vim
 inoremap jk <ESC>
 vnoremap jk <ESC>
 
-" Move faster when pressing shift + key
-nnoremap H 4h
-nnoremap J 4j
-nnoremap K 4k
-nnoremap L 4l
-
 " Go to left tab with "gr" instead of "gT"
 nnoremap gr gT
 

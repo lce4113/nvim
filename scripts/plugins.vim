@@ -16,10 +16,6 @@ Plug 'sainnhe/sonokai'
 Plug 'morhetz/gruvbox'
 Plug 'joshdick/onedark.vim'
 
-" C++ IDE
-Plug 'rhysd/vim-clang-format' " code formatting
-Plug 'vim-syntastic/syntastic' " syntax checking
-
 " Goyo for 'distraction free writing in vim'
 Plug 'junegunn/goyo.vim'
 
@@ -46,12 +42,6 @@ Plug 'airblade/vim-rooter' " Searches through directories
 
 " Codi for inline REPL
 Plug 'metakirby5/codi.vim'
-
-" Tagbar for seeing a file's structure
-Plug 'preservim/tagbar'
-
-" Vim Airline for a cool tabline
-Plug 'vim-airline/vim-airline'
 
 " Autoformatting
 Plug 'Chiel92/vim-autoformat'
