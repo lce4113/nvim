@@ -1,19 +1,21 @@
 if exists('g:vscode')
 
-  " ––– VSCode –––
+  " ––– VSCode Only –––
 
   " VSCode specific stuff
   source ~/.config/nvim/scripts/vscode.vim
 
 else
-  " ––– Neovim –––
+
+  " ––– Neovim Only –––
 
   " vim-plug plugins
   source ~/.config/nvim/scripts/plugins.vim
   " Plugin configuration
-  source ~/.config/nvim/scripts/plug-config/main.vim
+  source ~/.config/nvim/scripts/plug-config/plug-config.vim
 
 endif
+
 " ––– Neovim and VSCode –––
 
 " Key mappings and auto commands

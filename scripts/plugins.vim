@@ -103,8 +103,6 @@ Plug 'glepnir/lspsaga.nvim'
 " COC for autocomplete (for stuff native LSP can't do)
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-" Ultisnips for making and using snippets
-Plug 'SirVer/ultisnips'
 " Premade snippets
 Plug 'honza/vim-snippets'
 " Add UltiSnips to autocomplete

@@ -66,7 +66,7 @@ source ~/.config/nvim/scripts/plug-config/lsp/lsp-config.vim
 luafile ~/.config/nvim/scripts/plug-config/lsp/lsp-kind.lua
 
 " ––– Snippets –––
-source ~/.config/nvim/scripts/plug-config/snippets/UltiSnips.vim
+source ~/.config/nvim/scripts/plug-config/snippets/coc-snippets.vim
 " luafile ~/.config/nvim/scripts/plug-config/snippets/nvim-snippets.vim
 
 " ––– LSP Saga –––
