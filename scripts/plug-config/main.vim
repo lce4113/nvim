@@ -44,7 +44,8 @@ let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
 autocmd FileType * RainbowParentheses
 
 " ––– NERD Tree –––
-let NERDTreeQuitOnOpen=1 " Close NERD Tree after opening a file
+let NERDTreeQuitOnOpen=0 " Close NERD Tree after opening a file
+let NERDTreeShowBookmarks=1 " Show NERD Tree bookmarks
 
 " ––– FAR –––
 source ~/.config/nvim/scripts/plug-config/far.vim
@@ -71,8 +72,11 @@ source ~/.config/nvim/scripts/plug-config/snippets/UltiSnips.vim
 " ––– LSP Saga –––
 luafile ~/.config/nvim/scripts/plug-config/lsp/lsp-saga.lua
 
-" ––– Codi ––––
+" ––– Codi –––
 source ~/.config/nvim/scripts/plug-config/codi.vim
 
-" ––– Nvim Completion ––––
+" ––– Nvim Completion –––
 " source ~/.config/nvim/scripts/plug-config/completion.vim
+
+" ––– Markdown Preview –––
+let g:mkdp_browser = 'firefox'

@@ -55,7 +55,7 @@ Plug 'junegunn/vim-easy-align'
 Plug 'tpope/vim-surround'
 
 " Vim Markdown Preview for opening a preview of a markdown file in a browser
-Plug 'iamcco/markdown-preview.nvim'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' }
 
 " Vim Clap for FZF like stuff
 Plug 'liuchengxu/vim-clap'
