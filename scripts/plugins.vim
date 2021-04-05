@@ -92,11 +92,10 @@ Plug 'kyazdani42/nvim-web-devicons'
 " Neovim Native LSP Config
 Plug 'neovim/nvim-lspconfig'
 " Neovim Native LSP Autocomplete
-Plug 'hrsh7th/nvim-compe'
+" Plug 'hrsh7th/nvim-compe'
 
 " Vim LSPKind for fancy autocomplete icons
 Plug 'onsails/lspkind-nvim'
-
 " LSP Saga for code actions
 Plug 'glepnir/lspsaga.nvim'
 
@@ -105,8 +104,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Premade snippets
 Plug 'honza/vim-snippets'
-" Add UltiSnips to autocomplete
-Plug 'nvim-lua/completion-nvim'
 
 
 " Vim Plug end

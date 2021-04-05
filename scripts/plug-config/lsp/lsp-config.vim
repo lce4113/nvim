@@ -17,6 +17,6 @@ nnoremap <silent> <LEADER>k  :lua vim.lsp.diagnostic.goto_prev()<CR>
 " Python config
 lua require('lspconfig').pyright.setup{}
 " C++ config
-lua require('lspconfig').clangd.setup{}
+lua require('lspconfig').ccls.setup{}
 " Vim config
 " lua require('lspconfig').vimls.setup{}

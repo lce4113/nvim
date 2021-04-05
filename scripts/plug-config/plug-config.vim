@@ -65,18 +65,15 @@ source ~/.config/nvim/scripts/plug-config/lsp/lsp-config.vim
 " ––– Vim LSP Kind –––
 luafile ~/.config/nvim/scripts/plug-config/lsp/lsp-kind.lua
 
-" ––– Snippets –––
+" ––– COC Snippets –––
 source ~/.config/nvim/scripts/plug-config/snippets/coc-snippets.vim
-" luafile ~/.config/nvim/scripts/plug-config/snippets/nvim-snippets.vim
+" source ~/.config/nvim/scripts/plug-config/snippets/nvim-snippets.vim
 
 " ––– LSP Saga –––
 luafile ~/.config/nvim/scripts/plug-config/lsp/lsp-saga.lua
 
 " ––– Codi –––
 source ~/.config/nvim/scripts/plug-config/codi.vim
-
-" ––– Nvim Completion –––
-" source ~/.config/nvim/scripts/plug-config/completion.vim
 
 " ––– Markdown Preview –––
 let g:mkdp_browser = 'firefox'

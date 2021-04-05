@@ -1,5 +1,4 @@
 " ––– Other Commands –––
-
 " Start Live Easy Align with oa in visual and normal mode
 nmap <LEADER>oa :LiveEasyAlign<CR>
 xmap <LEADER>oa :LiveEasyAlign<CR>
@@ -43,13 +42,14 @@ let g:which_key_map['o']['c'] = {
       \ }
 
 " ––– Startify Commands –––
+nnoremap <LEADER>oSd :Startify<CR>
 let g:which_key_map['o']['S'] = {
-      \ 'name':'+Startify',
-      \ 'c': [ ':SClose'  , 'Close Session' ] ,
-      \ 'd': [ ':SDelete' , 'Delete Session'] ,
-      \ 'l': [ ':SLoad'   , 'Load Session'  ] ,
-      \ 'o': [ ':Startify', 'Open Startify' ] ,
-      \ 's': [ ':SSave'   , 'Save Session'  ]
+      \ 'name':'+Startify'   ,
+      \ 'c': [ ':SClose'     , 'Close Session'] ,
+      \ 'd': 'Delete Session',
+      \ 'l': [ ':SLoad'      , 'Load Session' ] ,
+      \ 'o': [ ':Startify'   , 'Open Startify'] ,
+      \ 's': [ ':SSave'      , 'Save Session' ]
       \ }
 
 " ––– Window Commands –––
