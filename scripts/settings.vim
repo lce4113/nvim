@@ -7,12 +7,6 @@
 "                               __/ |
 "                              |___/
 
-" Theme
-colorscheme sonokai " Set colorscheme
-let g:airline_theme = "sonokai" " Airline theme
-set background=dark " Use dark theme
-set termguicolors
-
 " Set space to the leader key
 let mapleader = ' '
 
@@ -24,7 +18,14 @@ set number relativenumber " Hybrid line numbers
 set cursorline " Highlight current line
 set nowrap " Don't wrap long lines
 set colorcolumn= " Remove color column for line length limit
+set autochdir " Automatically set current directory to file directory
 autocmd FileType * set formatoptions-=cro " Stop comment continuation to next line
+
+" Theme
+colorscheme sonokai " Set colorscheme
+let g:airline_theme = "sonokai" " Airline theme
+set background=dark " Use dark theme
+set termguicolors
 
 " Files
 set noswapfile " Disable swap file

@@ -77,3 +77,6 @@ source ~/.config/nvim/scripts/plug-config/codi.vim
 
 " ––– Markdown Preview –––
 let g:mkdp_browser = 'firefox'
+
+" ––– Galaxyline –––
+luafile ~/.config/nvim/scripts/plug-config/galaxyline.lua

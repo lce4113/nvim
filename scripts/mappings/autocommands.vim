@@ -11,20 +11,20 @@
 " C++
 
 " "r" for run
-autocmd BufEnter *.cpp nnoremap <LEADER>r :Autoformat \| wa \| !g++ -O2 -lm -std=c++17 -o output "%" && cat main.in \| ./output<CR>
-autocmd BufEnter *.cpp inoremap ® <ESC>:Autoformat \| wa \| !g++ -O2 -lm -std=c++17 -o output "%" && cat main.in \| ./output<CR>
+autocmd BufEnter *.cpp nnoremap <LEADER>r :Autoformat \| wa \| lcd %:p:h \| !g++ -O2 -lm -std=c++17 -o output "%" && cat main.in \| ./output<CR>
+autocmd BufEnter *.cpp inoremap ® <ESC>:Autoformat \| wa \| lcd %:p:h \| !g++ -O2 -lm -std=c++17 -o output "%" && cat main.in \| ./output<CR>
 " "R" for run without input
-autocmd BufEnter *.cpp nnoremap <LEADER>R :Autoformat \| wa \| !g++ -O2 -lm -std=c++17 -o output "%" && ./output<CR>
-autocmd BufEnter *.cpp inoremap ‰ <ESC>:Autoformat \| wa \| !g++ -O2 -lm -std=c++17 -o output "%" && ./output<CR>
+autocmd BufEnter *.cpp nnoremap <LEADER>R :Autoformat \| wa \| lcd %:p:h \| !g++ -O2 -lm -std=c++17 -o output "%" && ./output<CR>
+autocmd BufEnter *.cpp inoremap ‰ <ESC>:Autoformat \| wa \| lcd %:p:h \| !g++ -O2 -lm -std=c++17 -o output "%" && ./output<CR>
 
 " Python
 
 " "r" for run
-autocmd BufEnter *.py nnoremap <LEADER>R :Autoformat \| wa \| !cat main.in \| python3 "%"<CR>
-autocmd BufEnter *.py inoremap ‰ <ESC>:Autoformat \| wa \| !cat main.in \| python3 "%"<CR>
+autocmd BufEnter *.py nnoremap <LEADER>R :Autoformat \| wa \| lcd %:p:h \| !cat main.in \| python3 "%"<CR>
+autocmd BufEnter *.py inoremap ‰ <ESC>:Autoformat \| wa \| lcd %:p:h \| !cat main.in \| python3 "%"<CR>
 " "R" for run without input
-autocmd BufEnter *.py nnoremap <LEADER>R :Autoformat \| wa \| !python3 "%"<CR>
-autocmd BufEnter *.py inoremap ‰ <ESC>:Autoformat \| wa \| !python3 "%"<CR>
+autocmd BufEnter *.py nnoremap <LEADER>R :Autoformat \| wa \| lcd %:p:h \| !python3 "%"<CR>
+autocmd BufEnter *.py inoremap ‰ <ESC>:Autoformat \| wa \| lcd %:p:h \| !python3 "%"<CR>
 
 " Vim
 

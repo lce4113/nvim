@@ -1,2 +1,29 @@
 {
+  "suggest.completionItemKindLabels": {
+    "class": " פּ ",
+    "color": "  ",
+    "constant": "  ",
+    "constructor": "  ",
+    "enum": " 練",
+    "enumMember": "  ",
+    "event": "  ",
+    "field": "  ",
+    "file": "  ",
+    "folder": " ﱮ ",
+    "function": "  ",
+    "interface": " ﰮ ",
+    "keyword": "  ",
+    "method": "  ",
+    "module": "  ",
+    "operator": "  ",
+    "property": "  ",
+    "reference": "  ",
+    "snippet": "  ",
+    "struct": "  ",
+    "text": "  ",
+    "typeParameter": "<>",
+    "unit": "  ",
+    "value": "  ",
+    "variable": "[]"
+  }
 }
