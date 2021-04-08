@@ -80,3 +80,8 @@ let g:mkdp_browser = 'firefox'
 
 " ––– Galaxyline –––
 luafile ~/.config/nvim/scripts/plug-config/galaxyline.lua
+
+" ––– Vim Signify –––
+let g:signify_sign_add = '+'
+let g:signify_sign_delete = '-'
+let g:signify_sign_change = '~'

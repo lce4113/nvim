@@ -108,6 +108,9 @@ Plug 'honza/vim-snippets'
 " Galaxyline for a cool status line
 Plug 'glepnir/galaxyline.nvim', {'branch': 'main'}
 
+" Vista for a tag viewer
+Plug 'liuchengxu/vista.vim'
+
 
 " Vim Plug end
 call plug#end()

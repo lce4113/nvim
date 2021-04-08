@@ -3,7 +3,7 @@ let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-
 let v:this_session=expand("<sfile>:p")
 silent only
 silent tabonly
-cd ~/.config/nvim/scripts/plug-config
+cd ~/.config/nvim
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
@@ -31,14 +31,16 @@ badd +2 ~/.config/nvim/scripts/plug-config/completion.vim
 badd +1 output:///snippets
 badd +1 /private/var/folders/wy/cqz2sjwj1399df8xwm3fp8xw0000gn/T/nvimopueo3/2
 badd +21 ~/.config/nvim/README.md
-badd +82 ~/.config/nvim/scripts/plug-config/plug-config.vim
+badd +85 ~/.config/nvim/scripts/plug-config/plug-config.vim
 badd +8 ~/.config/nvim/scripts/plug-config/snippets/coc-snippets.vim
 badd +18 ~/.config/nvim/scripts/plug-config/startify.vim
 badd +28 ~/.config/nvim/scripts/plug-config/lsp/lsp-saga.lua
 badd +1 ~/.config/nvim/scripts/mappings/which-key-leader-s.vim
 badd +1 ~/.config/nvim/scripts/mappings/mappings-g.vim
 badd +22 ~/.config/nvim/scripts/plug-config/lsp/lsp-kind.lua
-badd +93 ~/.config/nvim/scripts/plug-config/galaxyline.lua
+badd +27 ~/.config/nvim/scripts/plug-config/galaxyline.lua
+badd +1 /usr/local/Cellar/neovim/HEAD-0ab88c2/share/nvim/runtime/doc/helphelp.txt
+badd +6102 /usr/local/Cellar/neovim/HEAD-0ab88c2/share/nvim/runtime/doc/options.txt
 argglobal
 %argdel
 tabnew
@@ -72,33 +74,6 @@ normal! zt
 keepjumps 109
 normal! 015|
 tabnext
-edit ~/.config/nvim/scripts/plug-config/lsp/lsp-config.vim
-set splitbelow splitright
-set nosplitbelow
-wincmd t
-set winminheight=0
-set winheight=1
-set winminwidth=0
-set winwidth=1
-argglobal
-balt ~/.config/nvim/scripts/plugins.vim
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let &fdl = &fdl
-let s:l = 20 - ((14 * winheight(0) + 14) / 28)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 20
-normal! 029|
-tabnext
 edit ~/.config/nvim/scripts/plug-config/plug-config.vim
 set splitbelow splitright
 set nosplitbelow
@@ -119,14 +94,14 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 82 - ((26 * winheight(0) + 14) / 28)
+let s:l = 85 - ((9 * winheight(0) + 14) / 28)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 82
-normal! 056|
+keepjumps 85
+normal! 027|
 tabnext
-edit ~/.config/nvim/scripts/plug-config/galaxyline.lua
+edit ~/.config/nvim/scripts/plug-config/lsp/lsp-config.vim
 set splitbelow splitright
 set nosplitbelow
 wincmd t
@@ -135,6 +110,7 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 argglobal
+balt ~/.config/nvim/scripts/plug-config/plug-config.vim
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -145,12 +121,72 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 15 - ((14 * winheight(0) + 14) / 28)
+let s:l = 20 - ((1 * winheight(0) + 14) / 28)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 15
-normal! 0
+keepjumps 20
+normal! 029|
+tabnext
+edit /usr/local/Cellar/neovim/HEAD-0ab88c2/share/nvim/runtime/doc/options.txt
+set splitbelow splitright
+wincmd _ | wincmd |
+split
+1wincmd k
+wincmd w
+set nosplitbelow
+wincmd t
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
+exe '1resize ' . ((&lines * 10 + 15) / 31)
+exe '2resize ' . ((&lines * 17 + 15) / 31)
+argglobal
+balt ~/.config/nvim/scripts/plug-config/galaxyline.lua
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal nofen
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 6102 - ((0 * winheight(0) + 5) / 10)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 6102
+normal! 049|
+wincmd w
+argglobal
+if bufexists("~/.config/nvim/scripts/plug-config/galaxyline.lua") | buffer ~/.config/nvim/scripts/plug-config/galaxyline.lua | else | edit ~/.config/nvim/scripts/plug-config/galaxyline.lua | endif
+if &buftype ==# 'terminal'
+  silent file ~/.config/nvim/scripts/plug-config/galaxyline.lua
+endif
+balt ~/.config/nvim/scripts/plug-config/lsp/lsp-config.vim
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 104 - ((10 * winheight(0) + 8) / 17)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 104
+normal! 036|
+wincmd w
+2wincmd w
+exe '1resize ' . ((&lines * 10 + 15) / 31)
+exe '2resize ' . ((&lines * 17 + 15) / 31)
 tabnext 4
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0&& getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
@@ -162,6 +198,7 @@ if filereadable(s:sx)
   exe "source " . fnameescape(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
+nohlsearch
 doautoall SessionLoadPost
 unlet SessionLoad
 " vim: set ft=vim :
