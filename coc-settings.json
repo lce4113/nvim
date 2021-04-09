@@ -25,5 +25,6 @@
     "unit": "  ",
     "value": "  ",
     "variable": "[]"
-  }
+  },
+  "coc.preferences.jumpCommand": "tabe"
 }

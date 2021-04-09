@@ -42,6 +42,7 @@ let g:which_key_map = {
       \ 's':'+Search'                             ,
       \ 't':'+Tabs'                               ,
       \ 'T': [ ':NERDTreeToggle'                  , 'File Tree'                   ] ,
+      \ 'v': [ ':Vista!!'                         , 'Toggle Vista'                ] ,
       \ 'w': [ ':Autoformat | w'                  , 'Save File'                   ] ,
       \ 'W': [ ':wa'                              , 'Save All Buffers'            ] ,
       \ 'z': [ ':Goyo | set number relativenumber', 'Zen Mode (Goyo)'             ]

@@ -21,6 +21,7 @@ vnoremap jk <ESC>
 
 " Go to left tab with "gr" instead of "gT"
 nnoremap gr gT
+vnoremap gr gT
 
 " Press e to delete character and enter insert mode
 nnoremap e cl
@@ -30,6 +31,7 @@ nnoremap Y y$
 
 " ; (semicolon) to go to the end of the line
 nnoremap ; $
+vnoremap ; $
 
 " Option + j or k key to move a line down or up in normal and insert mode
 nnoremap ∆ ddp

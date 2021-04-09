@@ -35,6 +35,12 @@ autocmd BufEnter *.vim inoremap ® <ESC>:Autoformat \| wa \| source $MYVIMRC<CR>
 autocmd BufEnter *.vim nnoremap <LEADER>R :Autoformat \| wa \| source $MYVIMRC \| PlugInstall<CR>:q
 autocmd BufEnter *.vim inoremap ‰ <ESC>:Autoformat \| wa \| source $MYVIMRC \| PlugInstall<CR>:q
 
+" All Other Files (Snippets, JSON)
+
+" "r" for save and source
+autocmd BufEnter *.snippets,*.json,*.sh nnoremap <LEADER>r :Autoformat \| wa \| source $MYVIMRC<CR>
+autocmd BufEnter *.snippets,*.json,*.sh inoremap ® <ESC>:Autoformat \| wa \| source $MYVIMRC<CR>
+
 
 " ––– Other –––
 

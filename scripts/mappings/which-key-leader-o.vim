@@ -35,10 +35,11 @@ let g:which_key_map['o'] = {
 " ––– COC Commands –––
 let g:which_key_map['o']['c'] = {
       \ 'name':'+COC'                                  ,
-      \ 'm': [ ':CocList marketplace'                  , 'COC Marketplace'] ,
-      \ 's': [ ':CocList snippets'                     , 'COC Snippets'   ] ,
-      \ 'c': [ ':tabe ~/.config/nvim/coc-settings.json', 'COC Config'     ] ,
-      \ 'r': [ ':CocList commands'                     , 'COC Commands'   ]
+      \ 'm': [ ':CocList marketplace'                  , 'Open COC Marketplace' ] ,
+      \ 's': [ ':CocCommand snippets.openSnippetFiles' , 'Go To Snippets File'  ] ,
+      \ 'S': [ ':CocList snippets'                     , 'List Snippets'        ] ,
+      \ 'c': [ ':tabe ~/.config/nvim/coc-settings.json', 'Go To COC Config File'] ,
+      \ 'r': [ ':CocList commands'                     , 'List COC Commands'    ]
       \ }
 
 " ––– Startify Commands –––

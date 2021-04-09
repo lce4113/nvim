@@ -3,13 +3,13 @@ let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-
 let v:this_session=expand("<sfile>:p")
 silent only
 silent tabonly
-cd ~/Google\ Drive/OmMahesh/Programming/Comp\ Prog/USACO
+cd ~/Google\ Drive/OmMahesh/Programming/Comp\ Prog/USACO/2021\ US\ Open/Silver\ \#2
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
 badd +26 ~/Google\ Drive/OmMahesh/Programming/Comp\ Prog/USACO/2021\ US\ Open/Silver\ \#3/main.cpp
-badd +44 ~/Google\ Drive/OmMahesh/Programming/Comp\ Prog/USACO/2021\ US\ Open/Silver\ \#2/main.cpp
+badd +42 ~/Google\ Drive/OmMahesh/Programming/Comp\ Prog/USACO/2021\ US\ Open/Silver\ \#2/main.cpp
 badd +87 ~/Google\ Drive/OmMahesh/Programming/Comp\ Prog/USACO/2021\ US\ Open/Silver\ \#1/main.cpp
 badd +1 ~/Google\ Drive/OmMahesh/Programming/Comp\ Prog/USACO/2021\ US\ Open/Silver\ \#1/main.in
 badd +1 ~/Google\ Drive/OmMahesh/Programming/Comp\ Prog/USACO/2021\ US\ Open/Silver\ \#2/main.in
