@@ -4,12 +4,11 @@ A semi-functional (Neo)vim configuration.
 
 ## Installation And Getting Started
 
-- Clone the repository into `~/.config` with `cd ~/.config && git clone https://github.com/lce4113/nvim.git`.
-- Run `brew install neovim --HEAD` to install the latest version of Neovim.
-- Run `nvim` to open Neovim.
-- Type "`:`" to enter command mode. Then type "`PlugInstall`" (the command to install all the plugins). Finally, press enter to run the command.
-- Type "`:`" to enter command mode again, type the command "`qa`" (**q**uits **a**ll tabs), and press enter.
-- Finally, once you have exited Neovim, reopen Neovim with `nvim` again and Neovim should be ready!
+Type this into your command line...
+```bash
+curl -s https://raw.githubusercontent.com/lce4113/nvim/master/install.sh | bash
+```
+It runs [this](https://github.com/lce4113/nvim/blob/master/install.sh) file.
 
 
 ## Screenshots

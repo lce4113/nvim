@@ -43,7 +43,7 @@ let g:which_key_map['o']['c'] = {
       \ }
 
 " ––– Startify Commands –––
-nnoremap <LEADER>oSd :Startify<CR>
+nnoremap <LEADER>oSd :SDelete<CR>
 let g:which_key_map['o']['S'] = {
       \ 'name':'+Startify'   ,
       \ 'c': [ ':SClose'     , 'Close Session'] ,

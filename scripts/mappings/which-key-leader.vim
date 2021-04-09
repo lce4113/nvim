@@ -9,6 +9,16 @@ xnoremap <LEADER>/ :Commentary<CR>
 nnoremap <LEADER>a li <ESC>r
 " Insert a character before the current position in normal mode
 nnoremap <LEADER>i i <ESC>r
+" Update Neovim config by git pulling in coc and nvim directories
+function Update()
+  echohl ClapMatches4
+  echo "Updating ~/.config/nvim..."
+  !cd ~/.config/nvim && git pull
+  echohl ClapMatches4
+  echo "Updating ~/.config/coc..."
+  !cd ~/.config/coc && git pull
+endfunction
+nnoremap <LEADER>u :call Update()<CR>
 
 let g:which_key_map = {
       \ '.': [ ':tabe $MYVIMRC'                   , 'Open $MYVIMRC'               ] ,
@@ -42,6 +52,7 @@ let g:which_key_map = {
       \ 's':'+Search'                             ,
       \ 't':'+Tabs'                               ,
       \ 'T': [ ':NERDTreeToggle'                  , 'File Tree'                   ] ,
+      \ 'u': 'Update Config'                      ,
       \ 'v': [ ':Vista!!'                         , 'Toggle Vista'                ] ,
       \ 'w': [ ':Autoformat | w'                  , 'Save File'                   ] ,
       \ 'W': [ ':wa'                              , 'Save All Buffers'            ] ,

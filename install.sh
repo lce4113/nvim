@@ -1,11 +1,11 @@
 #!/bin/bash
 
-BCYAN=$'\033[1;36m'
-BRED=$'\033[1;31m'
 BGREEN=$'\033[1;32m'
 RESET=$'\033[0m'
 DIM=$'\033[0;2m'
 BREAK="– – –"
+
+BADSF=$'fdsa'
 
 function begin() {
   echo "$DIM$BREAK$RESET"
@@ -37,7 +37,7 @@ brew install lazygit
 end
 
 begin "Installing Plugins..."
-nvim -c "PlugInstall | qa"
+nvim -c "PlugInstall | qa\!"
 end
 
 echo "$DIM$BREAK$RESET"

@@ -43,7 +43,7 @@ gl.short_line_list = {'vista', 'dbui'}
 
 gls.left[1] = {
   FirstElementL1 = {
-    provider = function() return '' end,
+    provider = function() return ' ' end,
     condition = function()
       return vcs.diff_add() ~= nil or vcs.diff_modified() ~= nil or vcs.diff_remove() ~= nil
     end,
@@ -67,7 +67,7 @@ gls.left[3] = {
     condition = function()
       return vcs.diff_add() ~= nil or vcs.diff_modified() ~= nil or vcs.diff_remove() ~= nil
     end,
-    icon = '   ',
+    icon = '  ',
     highlight = {colors.diff_add, colors.bg[2]},
   }
 }
@@ -100,8 +100,7 @@ gls.left[6] = {
   SpaceL6 = {
     provider = function() return ' ' end,
     condition = function()
-      return (not (vcs.diff_add() ~= nil or vcs.diff_modified() ~= nil or vcs.diff_remove() ~= nil))
-      and fileinfo.get_file_icon() ~= ' '
+      return fileinfo.get_file_icon() ~= ' '
     end,
     highlight = {colors.text, colors.bg[3]},
   }
