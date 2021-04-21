@@ -11,8 +11,8 @@ nnoremap <silent> <LEADER>hp :Lspsaga preview_definition()<CR>
 nnoremap <silent> <LEADER>hr :lua vim.lsp.buf.rename()<CR>
 nnoremap <silent> <LEADER>hs :Lspsaga show_line_diagnostics<CR>
 nnoremap <silent> <LEADER>ht :lua vim.lsp.buf.type_definition()<CR>
-nnoremap <silent> <LEADER>j  :lua vim.lsp.diagnostic.goto_next()<CR>
-nnoremap <silent> <LEADER>k  :lua vim.lsp.diagnostic.goto_prev()<CR>
+nnoremap <silent> <LEADER>j  :Lspsaga diagnostic_jump_next<CR>
+nnoremap <silent> <LEADER>k  :Lspsaga diagnostic_jump_prev<CR>
 
 " Python config
 lua require('lspconfig').pyright.setup{}

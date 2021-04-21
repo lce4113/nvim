@@ -1,8 +1,13 @@
+# Inalled Plugins
 plugged/
+
+# Disgusting Metadata
 Icon?
 .DS_Store
+
+# Caches and History Storage
 .netrwhist
-a.out
 undodir/
 tags
 fzf-history/
+session/

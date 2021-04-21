@@ -5,8 +5,6 @@ RESET=$'\033[0m'
 DIM=$'\033[0;2m'
 BREAK="– – –"
 
-BADSF=$'fdsa'
-
 function begin() {
   echo "$DIM$BREAK$RESET"
   echo "$BGREEN$1$RESET"

@@ -15,7 +15,7 @@ source ~/.config/nvim/scripts/mappings/autocommands.vim
 
 " ––– Key Maps –––
 
-" Press 'jk' to go into normal mode
+" Press "jk" to go into normal mode
 inoremap jk <ESC>
 vnoremap jk <ESC>
 
@@ -23,13 +23,13 @@ vnoremap jk <ESC>
 nnoremap gr gT
 vnoremap gr gT
 
-" Press e to delete character and enter insert mode
+" Press "e" to delete character and enter insert mode
 nnoremap e cl
 
-" Copy rest of line with Y (just like D and C)
+" Copy rest of line with "Y" (just like "D" and "C")
 nnoremap Y y$
 
-" ; (semicolon) to go to the end of the line
+" ";" (semicolon) to go to the end of the line
 nnoremap ; $
 vnoremap ; $
 
