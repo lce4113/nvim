@@ -9,6 +9,9 @@ xnoremap <LEADER>/ :Commentary<CR>
 nnoremap <LEADER>a li <ESC>r
 " Insert a character before the current position in normal mode
 nnoremap <LEADER>i i <ESC>r
+" Move through LSP file errors
+nnoremap <silent> <LEADER>j  :Lspsaga diagnostic_jump_next<CR>
+nnoremap <silent> <LEADER>k  :Lspsaga diagnostic_jump_prev<CR>
 " Update Neovim config by git pulling in coc and nvim directories
 function Update()
   echohl ClapMatches4
@@ -51,7 +54,7 @@ let g:which_key_map = {
       \ 'R':'Run File'                            ,
       \ 's':'+Search'                             ,
       \ 't':'+Tabs'                               ,
-      \ 'T': [ ':NERDTreeToggle'                  , 'File Tree'                   ] ,
+      \ 'T': [ ':NERDTreeToggle %'                , 'File Tree'                   ] ,
       \ 'u': 'Update Config'                      ,
       \ 'v': [ ':Vista!!'                         , 'Toggle Vista'                ] ,
       \ 'w': [ ':Autoformat | w'                  , 'Save File'                   ] ,
@@ -59,60 +62,10 @@ let g:which_key_map = {
       \ 'z': [ ':Goyo | set number relativenumber', 'Zen Mode (Goyo)'             ]
       \ }
 
-" LSP commands
-let g:which_key_map['h'] = {
-      \ 'name':'+LSP'                     ,
-      \ 'c': 'See Code Actions'           ,
-      \ 'd': 'Go To Definition'           ,
-      \ 'D': 'Go to Declaration'          ,
-      \ 'f': 'LSP Finder (See References)',
-      \ 'h': 'Hover'                      ,
-      \ 'H': 'Signature Help'             ,
-      \ 'i': 'Implementation'             ,
-      \ 'p': 'Preview Definition'         ,
-      \ 'r': 'Rename'                     ,
-      \ 's': 'Show Diagnostics'           ,
-      \ 't': 'Type Definition'
-      \ }
-
-" Vim Clap commands
-let g:which_key_map['l'] = {
-      \ 'name':'+VimClap'             ,
-      \ '/': [ ':Clap search_history' , 'Search History'           ] ,
-      \ 'b': [ ':Clap buffers'        , 'Buffers'                  ] ,
-      \ 'B': [ ':Clap marks'          , 'Bookmarks'                ] ,
-      \ 'c': [ ':Clap bcommits'       , 'Current Buffer''s Commits'] ,
-      \ 'C': [ ':Clap bcommits'       , 'All Commits'              ] ,
-      \ 'e': [ ':Clap registers'      , 'Registers'                ] ,
-      \ 'f': [ ':Clap filer'          , 'File Explorer'            ] ,
-      \ 'F': [ ':Clap files'          , 'Files'                    ] ,
-      \ 'g': [ ':Clap gfiles'         , 'Git Files'                ] ,
-      \ 'G': [ ':Clap git_diff_files' , 'Edited Git Files'         ] ,
-      \ 'h': [ ':Clap help_tags'      , 'Help Tags'                ] ,
-      \ 'l': [ ':Clap blines'         , 'Current Buffer''s Lines'  ] ,
-      \ 'L': [ ':Clap lines'          , 'All Lines'                ] ,
-      \ 'm': [ ':Clap command'        , 'Vim Commands'             ] ,
-      \ 'M': [ ':Clap command_history', 'Vim Command History'      ] ,
-      \ 'o': [ ':Clap loclist'        , 'Location List'            ] ,
-      \ 'O': [ ':Clap proj_tags'      , 'Project Tags'             ] ,
-      \ 'p': [ ':Clap providers'      , 'All Vim Clap Providers'   ] ,
-      \ 'P': [ ':Clap maps'           , 'Key Mappings'             ] ,
-      \ 'q': [ ':Clap quickfix'       , 'Quickfix Errors'          ] ,
-      \ 'r': [ ':Clap grep'           , 'Ripgrep'                  ] ,
-      \ 'R': [ ':Clap grep2'          , 'Ripgrep With Caching'     ] ,
-      \ 's': [ ':Clap colors'         , 'Colorschemes'             ] ,
-      \ 'S': [ ':Clap search_history' , 'Search History'           ] ,
-      \ 't': [ ':Clap filetypes'      , 'Filetypes'                ] ,
-      \ 'T': [ ':Clap tags'           , 'vista.vim Tags'           ] ,
-      \ 'w': [ ':Clap windows'        , 'Windows'                  ] ,
-      \ 'y': [ ':Clap history'        , 'File History'             ] ,
-      \ 'Y': [ ':Clap yanks'          , 'Yanks'                    ]
-      \ }
-
 " LSP
-source ~/.config/nvim/scripts/mappings/which-key-leader-h.vim
-" Vim Clap
 source ~/.config/nvim/scripts/mappings/which-key-leader-l.vim
+" Vim Clap
+source ~/.config/nvim/scripts/mappings/which-key-leader-h.vim
 " Other
 source ~/.config/nvim/scripts/mappings/which-key-leader-o.vim
 " Vim Plug

@@ -13,6 +13,8 @@ else
   source ~/.config/nvim/scripts/plugins.vim
   " Plugin configuration
   source ~/.config/nvim/scripts/plug-config/plug-config.vim
+  " LSP Config
+  source ~/.config/nvim/scripts/plug-config/lsp/lsp-config.vim
 
 endif
 

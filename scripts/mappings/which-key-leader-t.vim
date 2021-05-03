@@ -1,4 +1,5 @@
-" Tab commands
+" ––– Tab Commands –––
+
 let g:which_key_map['t'] = {
       \ 'name':'+Tabs'         ,
       \ '.': [ ':tabe $MYVIMRC', 'Open $MYVIMRC'     ] ,

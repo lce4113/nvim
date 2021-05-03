@@ -38,8 +38,8 @@ autocmd BufEnter *.vim inoremap ‰ <ESC>:Autoformat \| wa \| source $MYVIMRC \|
 " All Other Files (Snippets, JSON)
 
 " "r" for save and source
-autocmd BufEnter *.snippets,*.json,*.sh nnoremap <LEADER>r :Autoformat \| wa \| source $MYVIMRC<CR>
-autocmd BufEnter *.snippets,*.json,*.sh inoremap ® <ESC>:Autoformat \| wa \| source $MYVIMRC<CR>
+autocmd BufEnter *.lua,*.snippets,*.json,*.sh nnoremap <LEADER>r :Autoformat \| wa \| source $MYVIMRC<CR>
+autocmd BufEnter *.lua,*.snippets,*.json,*.sh inoremap ® <ESC>:Autoformat \| wa \| source $MYVIMRC<CR>
 
 
 " ––– Other –––
@@ -50,8 +50,8 @@ augroup SetCursorOnLeave
   autocmd VimLeave * set guicursor=a:ver20-blinkwait300-blinkon200-blinkoff150
 augroup end
 
-" Source MYVIMRC on enter
-augroup SourceMYVIMRC
+" Which Key needs Vim to be sourced again on enter for some reason
+augroup SourceVimrcOnEnter
   autocmd!
   autocmd VimEnter * source $MYVIMRC
-augroup end
+augroup END

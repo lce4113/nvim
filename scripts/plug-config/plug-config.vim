@@ -23,11 +23,6 @@ let g:lazygit_use_neovim_remote = 1 " Fallback to 0 if neovim-remote is not inst
 " ––– FZF –––
 source ~/.config/nvim/scripts/plug-config/fzf.vim
 
-" ––– Auto Pairs –––
-let g:AutoPairsShortcutToggle='π' " Option + p
-let g:AutoPairsShortcutFastWrap='´' " Option + shift + e
-let g:AutoPairsShortcutJump='µ' " Option + m
-
 " ––– Quickscope –––
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T'] " Keys that trigger highlight
 let g:qs_max_chars=150
@@ -58,9 +53,6 @@ source ~/.config/nvim/scripts/plug-config/sneak.vim
 
 " ––– Vim Clap –––
 let g:clap_open_action = { 'ctrl-t': 'tab split', 'ctrl-x': 'split', 'ctrl-v': 'vsplit' }
-
-" ––– Vim LSP Config –––
-source ~/.config/nvim/scripts/plug-config/lsp/lsp-config.vim
 
 " ––– Vim LSP Kind –––
 luafile ~/.config/nvim/scripts/plug-config/lsp/lsp-kind.lua

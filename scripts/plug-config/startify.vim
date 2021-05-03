@@ -32,11 +32,11 @@ let g:startify_custom_header = [
 
 " Let Startify take care of buffers
 let g:startify_session_delete_buffers = 1
-" Similar to Vim-rooter
-let g:startify_change_to_vcs_root = 1
 " If you want Unicode
 let g:startify_fortune_use_unicode = 1
 " Automatically update sessions
 let g:startify_session_persistence = 1
-" Get rid of empy buffer and quit
+" Get rid of empty buffer and quit
 let g:startify_enable_special = 0
+" Don't change working directory
+let g:startify_change_to_dir = 0
