@@ -63,14 +63,14 @@ let g:which_key_map = {
       \ }
 
 " LSP
-source ~/.config/nvim/scripts/mappings/which-key-leader-l.vim
+source ~/.config/nvim/scripts/mappings/which-key-l.vim
 " Vim Clap
-source ~/.config/nvim/scripts/mappings/which-key-leader-h.vim
+source ~/.config/nvim/scripts/mappings/which-key-h.vim
 " Other
-source ~/.config/nvim/scripts/mappings/which-key-leader-o.vim
+source ~/.config/nvim/scripts/mappings/which-key-o.vim
 " Vim Plug
-source ~/.config/nvim/scripts/mappings/which-key-leader-p.vim
+source ~/.config/nvim/scripts/mappings/which-key-p.vim
 " FZF (Search)
-source ~/.config/nvim/scripts/mappings/which-key-leader-s.vim
+source ~/.config/nvim/scripts/mappings/which-key-s.vim
 " Tabs
-source ~/.config/nvim/scripts/mappings/which-key-leader-t.vim
+source ~/.config/nvim/scripts/mappings/which-key-t.vim
