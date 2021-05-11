@@ -6,7 +6,7 @@
 "  /_/    \_\__,_|\__\___/ \___\___/|_| |_| |_|_| |_| |_|\__,_|_| |_|\__,_|___/
 
 
-" ––– Run Code –––
+" ––– Running Code –––
 
 " C++
 
@@ -35,7 +35,7 @@ autocmd BufEnter *.vim inoremap ® <ESC>:Autoformat \| wa \| source $MYVIMRC<CR>
 autocmd BufEnter *.vim nnoremap <LEADER>R :Autoformat \| wa \| source $MYVIMRC \| PlugInstall<CR>:q
 autocmd BufEnter *.vim inoremap ‰ <ESC>:Autoformat \| wa \| source $MYVIMRC \| PlugInstall<CR>:q
 
-" All Other Files (Snippets, JSON)
+" All Other Files (Snippets, JSON, etc.)
 
 " "r" for save and source
 autocmd BufEnter *.lua,*.snippets,*.json,*.sh nnoremap <LEADER>r :Autoformat \| wa \| source $MYVIMRC<CR>
