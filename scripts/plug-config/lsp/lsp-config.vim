@@ -1,7 +1,7 @@
 " Python config
 lua require('lspconfig').pyright.setup{}
 " C++ config
-lua require('lspconfig').ccls.setup{}
+" lua require('lspconfig').ccls.setup{}
 " Vim config
 " lua require('lspconfig').vimls.setup{}
 

@@ -20,8 +20,8 @@ autocmd BufEnter *.cpp inoremap ‰ <ESC>:Autoformat \| wa \| lcd %:p:h \| !g++ 
 " Python
 
 " "r" for run
-autocmd BufEnter *.py nnoremap <LEADER>R :Autoformat \| wa \| lcd %:p:h \| !cat main.in \| python3 "%"<CR>
-autocmd BufEnter *.py inoremap ‰ <ESC>:Autoformat \| wa \| lcd %:p:h \| !cat main.in \| python3 "%"<CR>
+autocmd BufEnter *.py nnoremap <LEADER>r :Autoformat \| wa \| lcd %:p:h \| !cat main.in \| python3 "%"<CR>
+autocmd BufEnter *.py inoremap ® <ESC>:Autoformat \| wa \| lcd %:p:h \| !cat main.in \| python3 "%"<CR>
 " "R" for run without input
 autocmd BufEnter *.py nnoremap <LEADER>R :Autoformat \| wa \| lcd %:p:h \| !python3 "%"<CR>
 autocmd BufEnter *.py inoremap ‰ <ESC>:Autoformat \| wa \| lcd %:p:h \| !python3 "%"<CR>

@@ -65,7 +65,7 @@ source ~/.config/nvim/scripts/plug-config/snippets/coc-snippets.vim
 luafile ~/.config/nvim/scripts/plug-config/lsp/lsp-saga.lua
 
 " ––– Codi –––
-source ~/.config/nvim/scripts/plug-config/codi.vim
+" source ~/.config/nvim/scripts/plug-config/codi.vim
 
 " ––– Markdown Preview –––
 let g:mkdp_browser = 'firefox'

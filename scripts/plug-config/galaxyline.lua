@@ -138,43 +138,11 @@ gls.left[9] = {
 -- RIGHT
 
 gls.right[1] = {
-  DiagnosticError = {
-    icon = '  ',
-    separator = '',
-    separator_highlight = {colors.bg[5], colors.bg[4]},
-    highlight = {colors.diag_error, colors.bg[5]},
-    provider = 'DiagnosticError',
-  }
-}
-
-gls.right[2] = {
-  DiagnosticWarn = {
-    icon = '  ',
-    highlight = {colors.diag_warn, colors.bg[5]},
-    provider = 'DiagnosticWarn',
-  }
-}
-
-gls.right[3] = {
-  DiagnosticHint = {
-    icon = '  ',
-    highlight = {colors.diag_hint, colors.bg[5]},
-    provider = 'DiagnosticHint',
-  }
-}
-
-gls.right[4] = {
-  DiagnosticInfo = {
-    icon = '  ',
-    highlight = {colors.diag_info, colors.bg[5]},
-    provider = 'DiagnosticInfo',
-  }
-}
-
-gls.right[5] = {
   ShowLspClient = {
     icon = '  ',
     highlight = {colors.text, colors.bg[5]},
+    separator = '',
+    separator_highlight = {colors.bg[5], colors.bg[4]},
     provider = 'GetLspClient',
     condition = function()
       local tbl = {['dashboard'] = true, [' '] = true}
@@ -184,7 +152,7 @@ gls.right[5] = {
   }
 }
 
-gls.right[6] = {
+gls.right[2] = {
   LineInfo = {
     separator = ' ',
     separator_highlight = {colors.bg[6], colors.bg[5]},
@@ -194,7 +162,7 @@ gls.right[6] = {
   }
 }
 
-gls.right[7] = {
+gls.right[3] = {
   BufferType = {
     provider = 'FileTypeName',
     condition = condition.hide_in_width,
@@ -205,11 +173,11 @@ gls.right[7] = {
   }
 }
 
-gls.right[8] = {
+gls.right[4] = {
   SpaceR8 = {
     provider = function() return ' ' end,
     highlight = {colors.text, colors.bg[7]},
-  },
+  }
 }
 
 
