@@ -111,6 +111,8 @@ Plug 'glepnir/galaxyline.nvim', {'branch': 'main'}
 " Vista for a tag viewer
 Plug 'liuchengxu/vista.vim'
 
+" vim-clang-format for formatting c++ (hopefully)
+Plug 'rhysd/vim-clang-format'
 
 " Vim Plug end
 call plug#end()

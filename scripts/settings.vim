@@ -19,6 +19,8 @@ set cursorline " Highlight current line
 set nowrap " Don't wrap long lines
 set colorcolumn= " Remove color column for line length limit
 set autochdir " Automatically set current directory to file directory
+set foldmethod=marker " Allow folding
+set foldclose=all " Close folds automatically when moving out of them
 autocmd FileType * set formatoptions-=cro " Stop comment continuation to next line
 
 " Theme

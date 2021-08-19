@@ -11,7 +11,7 @@ let g:startify_bookmarks = [
       \ { '.': '~/.config/nvim/init.vim' },
       \ { 'a': '~/Google Drive/OmMahesh/Programming/Comp Prog/Advent of Code/' },
       \ { 'c': '~/Google Drive/OmMahesh/Programming/Comp Prog/' },
-      \ { 'C': '~/Google Drive/OmMahesh/Programming/Comp Prog/USACO/test.cpp' },
+      \ { 'C': '~/Google Drive/OmMahesh/Programming/Comp Prog/test.cpp' },
       \ { 'e': '/etc/paths' },
       \ { 'i': '~/.config/nvim/init.vim' },
       \ { 'n': '~/.config/nvim/' },

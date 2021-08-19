@@ -11,35 +11,35 @@
 " C++
 
 " "r" for run
-autocmd BufEnter *.cpp nnoremap <LEADER>r :Autoformat \| wa \| lcd %:p:h \| !g++ -O2 -lm -std=c++17 -o output "%" && cat main.in \| ./output<CR>
-autocmd BufEnter *.cpp inoremap ® <ESC>:Autoformat \| wa \| lcd %:p:h \| !g++ -O2 -lm -std=c++17 -o output "%" && cat main.in \| ./output<CR>
+autocmd BufEnter *.cpp nnoremap <LEADER>r :call Format() \| wa \| lcd %:p:h \| !g++ -O2 -lm -std=c++17 -o output "%" && cat main.in \| ./output<CR>
+autocmd BufEnter *.cpp inoremap ® <ESC>:call Format() \| wa \| lcd %:p:h \| !g++ -O2 -lm -std=c++17 -o output "%" && cat main.in \| ./output<CR>
 " "R" for run without input
-autocmd BufEnter *.cpp nnoremap <LEADER>R :Autoformat \| wa \| lcd %:p:h \| !g++ -O2 -lm -std=c++17 -o output "%" && ./output<CR>
-autocmd BufEnter *.cpp inoremap ‰ <ESC>:Autoformat \| wa \| lcd %:p:h \| !g++ -O2 -lm -std=c++17 -o output "%" && ./output<CR>
+autocmd BufEnter *.cpp nnoremap <LEADER>R :call Format() \| wa \| lcd %:p:h \| !g++ -O2 -lm -std=c++17 -o output "%" && ./output<CR>
+autocmd BufEnter *.cpp inoremap ‰ <ESC>:call Format() \| wa \| lcd %:p:h \| !g++ -O2 -lm -std=c++17 -o output "%" && ./output<CR>
 
 " Python
 
 " "r" for run
-autocmd BufEnter *.py nnoremap <LEADER>r :Autoformat \| wa \| lcd %:p:h \| !cat main.in \| python3 "%"<CR>
-autocmd BufEnter *.py inoremap ® <ESC>:Autoformat \| wa \| lcd %:p:h \| !cat main.in \| python3 "%"<CR>
+autocmd BufEnter *.py nnoremap <LEADER>r :call Format() \| wa \| lcd %:p:h \| !cat main.in \| python3 "%"<CR>
+autocmd BufEnter *.py inoremap ® <ESC>:call Format() \| wa \| lcd %:p:h \| !cat main.in \| python3 "%"<CR>
 " "R" for run without input
-autocmd BufEnter *.py nnoremap <LEADER>R :Autoformat \| wa \| lcd %:p:h \| !python3 "%"<CR>
-autocmd BufEnter *.py inoremap ‰ <ESC>:Autoformat \| wa \| lcd %:p:h \| !python3 "%"<CR>
+autocmd BufEnter *.py nnoremap <LEADER>R :call Format() \| wa \| lcd %:p:h \| !python3 "%"<CR>
+autocmd BufEnter *.py inoremap ‰ <ESC>:call Format() \| wa \| lcd %:p:h \| !python3 "%"<CR>
 
 " Vim
 
 " "r" for save and source
-autocmd BufEnter *.vim nnoremap <LEADER>r :Autoformat \| wa \| source $MYVIMRC<CR>
-autocmd BufEnter *.vim inoremap ® <ESC>:Autoformat \| wa \| source $MYVIMRC<CR>
+autocmd BufEnter *.vim nnoremap <LEADER>r :call Format() \| wa \| source $MYVIMRC<CR>
+autocmd BufEnter *.vim inoremap ® <ESC>:call Format() \| wa \| source $MYVIMRC<CR>
 " "R" for save, source, and PlugInstall
-autocmd BufEnter *.vim nnoremap <LEADER>R :Autoformat \| wa \| source $MYVIMRC \| PlugInstall<CR>:q
-autocmd BufEnter *.vim inoremap ‰ <ESC>:Autoformat \| wa \| source $MYVIMRC \| PlugInstall<CR>:q
+autocmd BufEnter *.vim nnoremap <LEADER>R :call Format() \| wa \| source $MYVIMRC \| PlugInstall<CR>:q
+autocmd BufEnter *.vim inoremap ‰ <ESC>:call Format() \| wa \| source $MYVIMRC \| PlugInstall<CR>:q
 
 " All Other Files (Snippets, JSON, etc.)
 
 " "r" for save and source
-autocmd BufEnter *.lua,*.snippets,*.json,*.sh nnoremap <LEADER>r :Autoformat \| wa \| source $MYVIMRC<CR>
-autocmd BufEnter *.lua,*.snippets,*.json,*.sh inoremap ® <ESC>:Autoformat \| wa \| source $MYVIMRC<CR>
+autocmd BufEnter *.lua,*.snippets,*.json,*.sh nnoremap <LEADER>r :call Format() \| wa \| source $MYVIMRC<CR>
+autocmd BufEnter *.lua,*.snippets,*.json,*.sh inoremap ® <ESC>:call Format() \| wa \| source $MYVIMRC<CR>
 
 
 " ––– Other –––
