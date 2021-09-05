@@ -37,10 +37,12 @@ let g:which_key_map = {
       \ '<': [ ':tabe $P/Comp Prog/Templates/file io/main.cpp', 'Open C++ File IO Template'   ] ,
       \ '/': 'Toggle Comment'                                 ,
       \ ']': [ '<C-]>'                                        , 'Jump To Section In Help File'] ,
-      \ 'a':'Append Character'                                ,
+      \ 'a':'Append Character',
+      \ 'b': [ ':%s/TC() {\n  \/\* /TC() {\r  '               , 'Enable Multiple Test Cases'  ] ,
       \ 'c':'Toggle Comment'                                  ,
       \ 'd': [ ':q'                                           , 'Quit Tab'                    ] ,
       \ 'D': [ ':q!'                                          , 'Force Quit Tab'              ] ,
+      \ 'e': [ ':normal G{kk'                                 , 'Jump To Solve Function'      ] ,
       \ 'f': 'Format Buffer'                                  ,
       \ 'F': {
       \    'name' : '+FAR'                                    ,
