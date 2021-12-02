@@ -18,8 +18,6 @@ function Format()
   endif
 endfunction
 nnoremap <LEADER>f :call Format()<CR>
-" Open main.in file in vertical split window
-nnoremap <LEADER>m :lcd %:p:h \| vsplit main.in<CR><C-w>h
 " Update Neovim config by git pulling in coc and nvim directories
 function Update()
   echohl ClapMatches4

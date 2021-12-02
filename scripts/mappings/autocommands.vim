@@ -16,15 +16,19 @@ autocmd BufEnter *.cpp inoremap ® <ESC>:call Format() \| wa \| lcd %:p:h \| !g+
 " "R" for run without input
 autocmd BufEnter *.cpp nnoremap <LEADER>R :call Format() \| wa \| lcd %:p:h \| !g++ -O2 -lm -std=c++17 -o output "%" && ./output<CR>
 autocmd BufEnter *.cpp inoremap ‰ <ESC>:call Format() \| wa \| lcd %:p:h \| !g++ -O2 -lm -std=c++17 -o output "%" && ./output<CR>
+" Vertically split main.in file
+autocmd BufEnter *.cpp nnoremap <LEADER>m :lcd %:p:h \| vsplit main.in<CR><C-w>h
 
 " Python
 
 " "r" for run
-autocmd BufEnter *.py nnoremap <LEADER>r :call Format() \| wa \| lcd %:p:h \| !cat main.in \| python3 "%"<CR>
-autocmd BufEnter *.py inoremap ® <ESC>:call Format() \| wa \| lcd %:p:h \| !cat main.in \| python3 "%"<CR>
+autocmd BufEnter *.py nnoremap <LEADER>r :call Format() \| wa \| lcd %:p:h \| !cat input.txt \| python3 "%"<CR>
+autocmd BufEnter *.py inoremap ® <ESC>:call Format() \| wa \| lcd %:p:h \| !cat input.txt \| python3 "%"<CR>
 " "R" for run without input
 autocmd BufEnter *.py nnoremap <LEADER>R :call Format() \| wa \| lcd %:p:h \| !python3 "%"<CR>
 autocmd BufEnter *.py inoremap ‰ <ESC>:call Format() \| wa \| lcd %:p:h \| !python3 "%"<CR>
+" Vertically split input.txt file
+autocmd BufEnter *.py nnoremap <LEADER>m :lcd %:p:h \| vsplit input.txt<CR><C-w>h
 
 " Vim
 
